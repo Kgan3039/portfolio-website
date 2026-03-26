@@ -4,9 +4,9 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Your Name - Portfolio',
-  description: 'Computer Science & Data Science Student Portfolio - Building innovative solutions through code and data',
-  keywords: 'computer science, data science, portfolio, software engineer, machine learning, web development',
+  title: 'Kartik Gangwar - Portfolio',
+  description: 'Computer Science & Data Science student at UW–Madison. Building scalable applications and exploring AI, machine learning, and cloud technologies.',
+  keywords: 'Kartik Gangwar, UW Madison, computer science, data science, portfolio, software engineer, machine learning, web development, AI',
 }
 
 export default function RootLayout({ children }) {

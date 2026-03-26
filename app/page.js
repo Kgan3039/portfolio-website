@@ -41,44 +41,37 @@ export default function Portfolio() {
     }
   }
 
-  // Placeholder Data - Easy to replace
+  // Personal Information
   const personalInfo = {
-    name: "Your Name",
-    tagline: "Computer Science & Data Science Student",
-    bio: "Passionate about building innovative solutions at the intersection of software engineering and data science. Currently pursuing my degree and actively seeking internship opportunities to apply my skills in real-world projects.",
-    email: "your.email@example.com",
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername",
+    name: "Kartik Gangwar",
+    tagline: "Computer Science & Data Science student at UW–Madison",
+    bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison with a passion for artificial intelligence, software engineering, and cloud technologies. I thrive on building scalable applications that solve real-world problems through innovative software solutions and data-driven insights. My experience spans full-stack development, machine learning projects, and cloud infrastructure, with a focus on creating meaningful impact through technology. Whether working in collaborative team environments or tackling independent projects, I'm constantly exploring new ways to leverage AI and modern development practices to build solutions that matter.",
+    email: "kartik@example.com",
+    github: "https://github.com/kartikgangwar",
+    linkedin: "https://linkedin.com/in/kartikgangwar",
     resume: "/resume.pdf"
   }
 
   const projects = [
     {
-      title: "Machine Learning Model Optimizer",
-      description: "Built an automated ML pipeline that improves model performance through hyperparameter tuning and feature engineering, reducing training time by 40%.",
-      tech: ["Python", "TensorFlow", "Scikit-learn", "Docker"],
-      github: "https://github.com/yourusername/project1",
-      demo: "https://demo.example.com"
+      title: "FiPet",
+      description: "Led backend development for a pet care application during my SWE internship. Built scalable cloud functions using Firebase and TypeScript, implemented gamification systems to increase user engagement, and architected cloud infrastructure for real-time data synchronization.",
+      tech: ["TypeScript", "Firebase Functions", "Firebase", "Cloud Infrastructure", "Node.js"],
+      github: "https://github.com/kartikgangwar/fipet",
+      demo: null
     },
     {
-      title: "Real-Time Data Analytics Dashboard",
-      description: "Developed a full-stack dashboard for visualizing real-time data streams with interactive charts and predictive analytics.",
-      tech: ["React", "Node.js", "MongoDB", "D3.js"],
-      github: "https://github.com/yourusername/project2",
-      demo: "https://demo.example.com"
+      title: "TrueNeed",
+      description: "Developed a community-driven mobile application at a hackathon that connects people offering help with those in need. Built the entire matching algorithm and real-time notification system, creating seamless user flows for offers and requests with Firebase backend integration.",
+      tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
+      github: "https://github.com/kartikgangwar/trueneed",
+      demo: null
     },
     {
-      title: "Natural Language Processing Tool",
-      description: "Created an NLP application for sentiment analysis and text classification with 92% accuracy on test datasets.",
-      tech: ["Python", "PyTorch", "FastAPI", "React"],
-      github: "https://github.com/yourusername/project3",
-      demo: "https://demo.example.com"
-    },
-    {
-      title: "Algorithmic Trading Bot",
-      description: "Designed and implemented a trading algorithm using statistical analysis and machine learning for market prediction.",
-      tech: ["Python", "Pandas", "NumPy", "APIs"],
-      github: "https://github.com/yourusername/project4",
+      title: "Stock Sentiment ML Model",
+      description: "Engineered a machine learning model that analyzes social media sentiment to predict stock price fluctuations. Implemented NLP pipelines for sentiment extraction, trained classification models, and built data processing workflows to handle large-scale social media datasets.",
+      tech: ["Python", "NLP", "Machine Learning", "Pandas", "Scikit-learn"],
+      github: "https://github.com/kartikgangwar/stock-sentiment",
       demo: null
     }
   ]
@@ -86,32 +79,32 @@ export default function Portfolio() {
   const experiences = [
     {
       title: "Software Engineering Intern",
-      company: "Tech Company Inc.",
+      company: "FiPet",
       period: "Summer 2024",
-      description: "Developed and deployed microservices handling 100K+ daily requests. Collaborated with cross-functional teams to deliver features ahead of schedule.",
-      tech: ["Python", "AWS", "Docker", "PostgreSQL"]
+      description: "Developed and deployed backend features using Firebase Functions and TypeScript, handling real-time data synchronization for thousands of users. Designed and implemented gamification systems to boost user engagement by 35%. Collaborated with the product team to architect scalable cloud infrastructure and optimize application performance.",
+      tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
     },
     {
-      title: "Research Assistant",
-      company: "University Research Lab",
-      period: "Jan 2024 - Present",
-      description: "Working on computer vision research projects. Published findings in conference proceedings. Mentored 3 undergraduate students.",
-      tech: ["PyTorch", "OpenCV", "Python", "CUDA"]
+      title: "Robotics & JavaScript Instructor",
+      company: "Code Ninjas",
+      period: "Sept 2023 - May 2024",
+      description: "Taught coding fundamentals, robotics programming, and JavaScript to students aged 7-14 in an interactive learning environment. Developed custom curriculum materials and guided students through building their own projects, from basic game development to advanced robot automation challenges.",
+      tech: ["JavaScript", "Robotics", "Education Technology", "Curriculum Design"]
     },
     {
-      title: "Data Science Intern",
-      company: "Analytics Startup",
-      period: "Summer 2023",
-      description: "Built predictive models for customer behavior analysis. Improved recommendation system accuracy by 25% through feature engineering.",
-      tech: ["Python", "SQL", "Scikit-learn", "Tableau"]
+      title: "AI/ML Research & Development",
+      company: "Independent Projects & Hackathons",
+      period: "2023 - Present",
+      description: "Built multiple machine learning models and AI-powered applications through hackathons and personal projects. Focused on NLP, sentiment analysis, and predictive modeling. Collaborated with cross-functional teams in fast-paced hackathon environments to deliver working prototypes within 24-48 hour timeframes.",
+      tech: ["Python", "Machine Learning", "NLP", "Data Analysis"]
     }
   ]
 
   const skills = {
-    "Languages": ["Python", "JavaScript", "Java", "C++", "SQL", "R"],
-    "Frameworks & Libraries": ["React", "Node.js", "TensorFlow", "PyTorch", "Scikit-learn", "Pandas"],
-    "Tools & Technologies": ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "Linux"],
-    "Data Science": ["Machine Learning", "Deep Learning", "Data Visualization", "Statistical Analysis", "NLP", "Computer Vision"]
+    "Languages": ["Java", "Python", "TypeScript", "JavaScript", "SQL", "HTML/CSS"],
+    "Frameworks & Libraries": ["React", "React Native", "Next.js", "Node.js", "Firebase", "Scikit-learn", "Pandas"],
+    "Tools & Technologies": ["Git", "GitHub", "Docker", "Cloud Functions", "VS Code", "Linux"],
+    "Data Science & AI": ["Machine Learning", "Natural Language Processing", "Data Analysis", "Sentiment Analysis", "Statistical Modeling"]
   }
 
   return (
@@ -189,7 +182,8 @@ export default function Portfolio() {
           </div>
           
           <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Building scalable applications and solving complex problems through code and data.
+            I build scalable applications and explore AI, machine learning, and cloud technologies. 
+            Passionate about solving real-world problems through software and data.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
@@ -241,13 +235,16 @@ export default function Portfolio() {
               {personalInfo.bio}
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
-              I have a strong foundation in algorithms, data structures, and system design. My experience spans 
-              full-stack development, machine learning, and data analysis. I'm particularly interested in leveraging 
-              AI/ML to solve real-world problems and building scalable systems that make a difference.
+              Throughout my academic journey at UW–Madison, I've gained hands-on experience building production-ready 
+              applications through internships, hackathons, and personal projects. From developing backend systems at 
+              FiPet to creating mobile applications and machine learning models, I've learned to approach problems with 
+              both technical rigor and creative thinking. I excel in collaborative team environments and am always eager 
+              to learn new technologies and frameworks.
             </p>
             <p className="text-lg text-slate-300 leading-relaxed">
-              When I'm not coding, you can find me contributing to open-source projects, participating in hackathons, 
-              or exploring the latest developments in technology and artificial intelligence.
+              When I'm not coding, you'll find me exploring cutting-edge AI research, contributing to open-source projects, 
+              or mentoring students in programming and robotics. I'm actively seeking Summer 2025 internship opportunities 
+              where I can contribute to impactful projects while continuing to grow as a software engineer and data scientist.
             </p>
           </div>
         </div>
