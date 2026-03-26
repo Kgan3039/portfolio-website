@@ -44,7 +44,7 @@ export default function Portfolio() {
   // Personal Information
   const personalInfo = {
     name: "Kartik Gangwar",
-    tagline: "Computer Science & Data Science student at UW–Madison",
+    tagline: "CS + Data Science @ UW–Madison · Backend Engineer · ML Enthusiast",
     bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison with a passion for artificial intelligence, software engineering, and cloud technologies. I thrive on building scalable applications that solve real-world problems through innovative software solutions and data-driven insights. My experience spans full-stack development, machine learning projects, and cloud infrastructure, with a focus on creating meaningful impact through technology. Whether working in collaborative team environments or tackling independent projects, I'm constantly exploring new ways to leverage AI and modern development practices to build solutions that matter.",
     email: "kartik@example.com",
     github: "https://github.com/kartikgangwar",
@@ -182,8 +182,9 @@ export default function Portfolio() {
           </div>
           
           <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            I build scalable applications and explore AI, machine learning, and cloud technologies. 
-            Passionate about solving real-world problems through software and data.
+            I ship code that scales. Built Firebase backends handling thousands of users at FiPet, 
+            trained ML models predicting stock trends, and won hackathons building real-time mobile apps. 
+            <span className="text-slate-300 font-medium"> Seeking Summer 2025 SWE internships.</span>
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
