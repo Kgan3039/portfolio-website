@@ -54,13 +54,6 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "FiPet",
-      description: "Led backend development for a pet care application during my SWE internship. Built scalable cloud functions using Firebase and TypeScript, implemented gamification systems to increase user engagement, and architected cloud infrastructure for real-time data synchronization.",
-      tech: ["TypeScript", "Firebase Functions", "Firebase", "Cloud Infrastructure", "Node.js"],
-      github: "https://github.com/kartikgangwar/fipet",
-      demo: null
-    },
-    {
       title: "TrueNeed",
       description: "Developed a community-driven mobile application built during a hackathon that connects people offering help with those in need. Built the matching algorithm and real-time notification system, creating user flows for offers and requests with Firebase backend integration.",
       tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
@@ -203,7 +196,7 @@ export default function Portfolio() {
           
           <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4">
             I build full-stack applications and explore machine learning systems to solve real-world problems. 
-            From developing backend features at FiPet to building real-time apps and ML models, I enjoy turning 
+            From building real-time mobile apps to training ML models for predictive analysis, I enjoy turning 
             ideas into scalable software.
           </p>
 
