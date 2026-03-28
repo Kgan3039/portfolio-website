@@ -57,7 +57,7 @@ export default function Portfolio() {
       title: "TrueNeed",
       description: "Mobile app built during a hackathon connecting people who need help with those offering it. Built the matching system and real-time notifications using React Native and Firebase. Worked on the user flow for creating and responding to requests.",
       tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
-      github: "https://github.com/yourusername/trueneed",
+      github: "https://github.com/Kgan3039/TrueNeed",
       demo: null
     },
     {
