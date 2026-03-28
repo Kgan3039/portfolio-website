@@ -78,6 +78,13 @@ export default function Portfolio() {
       tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
     },
     {
+      title: "Summer Intern",
+      company: "iStartValley",
+      period: "June 2024 – October 2025",
+      description: "Worked in a selective internship program focused on innovation and entrepreneurship. Led a team of interns to research market opportunities, develop business models, and build AI-driven solutions. Applied lean startup principles, conducted product-market fit analysis, and presented final pitches to executives and entrepreneurs.",
+      tech: ["Business Strategy", "Product Management", "AI Solutions", "Lean Startup", "Market Research"]
+    },
+    {
       title: "Robotics and Python Instructor",
       company: "STEMshala Enrichment Center",
       period: "June 2023 – August 2025",
