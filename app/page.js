@@ -73,21 +73,21 @@ export default function Portfolio() {
     {
       title: "Software Engineering Intern",
       company: "FiPet",
-      period: "Summer 2024",
+      period: "January 2026 – Present",
       description: "Built backend features with Firebase Functions and TypeScript for a pet care app. Worked on real-time data sync and gamification features. Helped set up cloud infrastructure and improved load times.",
       tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
     },
     {
-      title: "Robotics & JavaScript Instructor",
+      title: "Robotics and Python Instructor",
       company: "STEMshala Enrichment Center",
-      period: "Sept 2023 - May 2024",
-      description: "Taught coding and robotics to kids aged 7-14. Created lesson plans and helped students build their own games and robots. Covered everything from basic JavaScript to building autonomous robot challenges.",
-      tech: ["JavaScript", "Robotics", "Education Technology", "Curriculum Design"]
+      period: "June 2023 – August 2025",
+      description: "Taught coding and robotics to kids aged 7-14. Created lesson plans and helped students build their own games and robots. Covered everything from basic Python to building autonomous robot challenges.",
+      tech: ["Python", "Robotics", "Education Technology", "Curriculum Design"]
     },
     {
       title: "AI/ML Project Manager",
       company: "AI@UW (University of Wisconsin–Madison)",
-      period: "2023 - Present",
+      period: "March 2023 – Present",
       description: "Managing a team building a stock sentiment analysis dashboard. Coordinating development work, making technical decisions, and helping implement ML models that pull real-time market sentiment data.",
       tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
     }
