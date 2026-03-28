@@ -472,9 +472,8 @@ export default function Portfolio() {
             </Button>
             <Button 
               asChild
-              variant="outline" 
               size="lg"
-              className="border-2 border-slate-700 hover:bg-slate-800 hover:border-purple-500/50 w-full sm:w-auto transition-all duration-300"
+              className="bg-slate-800 border-2 border-slate-600 hover:bg-slate-700 hover:border-purple-500 text-slate-100 hover:text-purple-400 w-full sm:w-auto shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300"
             >
               <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 h-5 w-5" />
