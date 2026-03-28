@@ -55,14 +55,14 @@ export default function Portfolio() {
   const projects = [
     {
       title: "TrueNeed",
-      description: "Developed a community-driven mobile application built during a hackathon that connects people offering help with those in need. Built the matching algorithm and real-time notification system, creating user flows for offers and requests with Firebase backend integration.",
+      description: "Mobile app built during a hackathon connecting people who need help with those offering it. Built the matching system and real-time notifications using React Native and Firebase. Worked on the user flow for creating and responding to requests.",
       tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
       github: "https://github.com/kartikgangwar/trueneed",
       demo: null
     },
     {
       title: "Stock Sentiment ML Model",
-      description: "Engineered a machine learning model that analyzes social media sentiment to predict stock price fluctuations. Implemented NLP pipelines for sentiment extraction, trained classification models, and built data processing workflows to handle social media datasets.",
+      description: "Built a machine learning model that pulls social media data and uses NLP to predict stock movements. Trained classification models on sentiment data and built a pipeline to process Twitter posts and news headlines.",
       tech: ["Python", "NLP", "Machine Learning", "Pandas", "Scikit-learn"],
       github: "https://github.com/kartikgangwar/stock-sentiment",
       demo: null
@@ -74,21 +74,21 @@ export default function Portfolio() {
       title: "Software Engineering Intern",
       company: "FiPet",
       period: "Summer 2024",
-      description: "Developed and deployed backend features using Firebase Functions and TypeScript, handling real-time data synchronization for active users. Designed and implemented gamification systems to increase user engagement. Collaborated with the product team to architect scalable cloud infrastructure and optimize application performance.",
+      description: "Built backend features with Firebase Functions and TypeScript for a pet care app. Worked on real-time data sync and gamification features. Helped set up cloud infrastructure and improved load times.",
       tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
     },
     {
       title: "Robotics & JavaScript Instructor",
       company: "STEMshala Enrichment Center",
       period: "Sept 2023 - May 2024",
-      description: "Taught coding fundamentals, robotics programming, and JavaScript to students aged 7-14 in an interactive learning environment. Developed custom curriculum materials and guided students through building their own projects, from basic game development to advanced robot automation challenges.",
+      description: "Taught coding and robotics to kids aged 7-14. Created lesson plans and helped students build their own games and robots. Covered everything from basic JavaScript to building autonomous robot challenges.",
       tech: ["JavaScript", "Robotics", "Education Technology", "Curriculum Design"]
     },
     {
       title: "AI/ML Project Manager",
       company: "AI@UW (University of Wisconsin–Madison)",
       period: "2023 - Present",
-      description: "Leading a team to build an AI-powered stock sentiment analysis dashboard. Managing project direction, coordinating development tasks, and guiding implementation of machine learning models for real-time insights.",
+      description: "Managing a team building a stock sentiment analysis dashboard. Coordinating development work, making technical decisions, and helping implement ML models that pull real-time market sentiment data.",
       tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
     }
   ]
