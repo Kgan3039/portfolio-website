@@ -463,8 +463,8 @@ export default function Portfolio() {
             Get In Touch
           </h2>
           <p className="text-xl text-slate-300 leading-relaxed px-4">
-            I'm currently looking for internship opportunities for Summer 2025. If you have any positions available 
-            or just want to chat about tech, feel free to reach out!
+            I'm currently open to software engineering and AI/ML opportunities. If you have any positions available 
+            or just want to connect, feel free to reach out!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <Button 
