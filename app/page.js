@@ -45,7 +45,7 @@ export default function Portfolio() {
   const personalInfo = {
     name: "Kartik Gangwar",
     tagline: "CS + Data Science @ UW–Madison · Software Engineer · ML Enthusiast",
-    bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison focused on building scalable software and AI-driven systems. I've worked on full-stack features at FiPet, including building backend services with Firebase and implementing frontend functionality for application features. I've also developed real-time mobile applications and built machine learning models for stock sentiment analysis. I enjoy solving real-world problems through full-stack development, cloud infrastructure, and data-driven approaches, and I'm currently seeking software engineering and AI/ML internship opportunities.",
+    bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison focused on building scalable software and AI-driven systems.\n\nI've worked on full-stack features at FiPet, including backend services with Firebase and frontend implementations for application features. I've also developed real-time mobile applications and built machine learning models for stock sentiment analysis.\n\nI'm currently seeking software engineering and AI/ML internship opportunities.",
     email: "kgangwar@wisc.edu",
     github: "https://github.com/Kgan3039",
     linkedin: "https://www.linkedin.com/in/kartik-gangwar",
@@ -252,22 +252,12 @@ export default function Portfolio() {
           <h2 className="text-5xl font-bold mb-12 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
             About Me
           </h2>
-          <div className="space-y-8">
-            <p className="text-xl text-slate-300 leading-relaxed">
-              {personalInfo.bio}
-            </p>
-            <p className="text-xl text-slate-300 leading-relaxed">
-              Throughout my academic journey at UW–Madison, I've gained hands-on experience building production-ready 
-              applications through internships, hackathons, and personal projects. From developing backend systems at 
-              FiPet to creating mobile applications and machine learning models, I've learned to approach problems with 
-              both technical rigor and creative thinking. I excel in collaborative team environments and am always eager 
-              to learn new technologies and frameworks.
-            </p>
-            <p className="text-xl text-slate-300 leading-relaxed">
-              When I'm not coding, you'll find me exploring cutting-edge AI research, contributing to open-source projects, 
-              or mentoring students in programming and robotics. I'm actively seeking Summer 2025 internship opportunities 
-              where I can contribute to impactful projects while continuing to grow as a software engineer and data scientist.
-            </p>
+          <div className="space-y-6">
+            {personalInfo.bio.split('\n\n').map((paragraph, index) => (
+              <p key={index} className="text-xl text-slate-300 leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </section>
