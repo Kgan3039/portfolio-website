@@ -45,7 +45,7 @@ export default function Portfolio() {
   const personalInfo = {
     name: "Kartik Gangwar",
     tagline: "CS + Data Science @ UW–Madison · Software Engineer · ML Enthusiast",
-    bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison with a passion for artificial intelligence, software engineering, and cloud technologies. I thrive on building scalable applications that solve real-world problems through innovative software solutions and data-driven insights. My experience spans full-stack development, machine learning projects, and cloud infrastructure, with a focus on creating meaningful impact through technology. Whether working in collaborative team environments or tackling independent projects, I'm constantly exploring new ways to leverage AI and modern development practices to build solutions that matter.",
+    bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison focused on building scalable software and AI-driven systems. I've worked on full-stack features at FiPet, including building backend services with Firebase and implementing frontend functionality for application features. I've also developed real-time mobile applications and built machine learning models for stock sentiment analysis. I enjoy solving real-world problems through full-stack development, cloud infrastructure, and data-driven approaches, and I'm currently seeking software engineering and AI/ML internship opportunities.",
     email: "kgangwar@wisc.edu",
     github: "https://github.com/Kgan3039",
     linkedin: "https://www.linkedin.com/in/kartik-gangwar",
@@ -73,7 +73,7 @@ export default function Portfolio() {
     {
       title: "AI/ML Project Manager",
       company: "AI@UW (University of Wisconsin–Madison)",
-      period: "March 2023 – Present",
+      period: "March 2026 – Present",
       description: "Managing a team building a stock sentiment analysis dashboard. Coordinating development work, making technical decisions, and helping implement ML models that pull real-time market sentiment data.",
       tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
     },
