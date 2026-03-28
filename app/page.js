@@ -202,9 +202,9 @@ export default function Portfolio() {
           </div>
           
           <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4">
-            I ship code that scales. Built Firebase backends handling thousands of users at FiPet, 
-            trained ML models predicting stock trends, and won hackathons building real-time mobile apps. 
-            <span className="text-slate-200 font-semibold"> Seeking Summer 2025 SWE internships.</span>
+            I build full-stack applications and explore machine learning systems to solve real-world problems. 
+            From developing backend features at FiPet to building real-time apps and ML models, I enjoy turning 
+            ideas into scalable software.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-6">
