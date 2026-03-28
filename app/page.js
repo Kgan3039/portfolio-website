@@ -46,7 +46,7 @@ export default function Portfolio() {
     name: "Kartik Gangwar",
     tagline: "CS + Data Science @ UW–Madison · Software Engineer · ML Enthusiast",
     bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison with a passion for artificial intelligence, software engineering, and cloud technologies. I thrive on building scalable applications that solve real-world problems through innovative software solutions and data-driven insights. My experience spans full-stack development, machine learning projects, and cloud infrastructure, with a focus on creating meaningful impact through technology. Whether working in collaborative team environments or tackling independent projects, I'm constantly exploring new ways to leverage AI and modern development practices to build solutions that matter.",
-    email: "kgan07684@gmail.com",
+    email: "kgangwar@wisc.edu",
     github: "https://github.com/Kgan3039",
     linkedin: "https://www.linkedin.com/in/kartik-gangwar",
     resume: "/resume.pdf"
@@ -57,19 +57,26 @@ export default function Portfolio() {
       title: "TrueNeed",
       description: "Mobile app built during a hackathon connecting people who need help with those offering it. Built the matching system and real-time notifications using React Native and Firebase. Worked on the user flow for creating and responding to requests.",
       tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
-      github: "https://github.com/kartikgangwar/trueneed",
+      github: "https://github.com/yourusername/trueneed",
       demo: null
     },
     {
       title: "Stock Sentiment ML Model",
       description: "Built a machine learning model that pulls social media data and uses NLP to predict stock movements. Trained classification models on sentiment data and built a pipeline to process Twitter posts and news headlines.",
       tech: ["Python", "NLP", "Machine Learning", "Pandas", "Scikit-learn"],
-      github: "https://github.com/kartikgangwar/stock-sentiment",
+      github: "https://github.com/Kgan3039/stock-prediction-bert",
       demo: null
     }
   ]
 
   const experiences = [
+    {
+      title: "AI/ML Project Manager",
+      company: "AI@UW (University of Wisconsin–Madison)",
+      period: "March 2023 – Present",
+      description: "Managing a team building a stock sentiment analysis dashboard. Coordinating development work, making technical decisions, and helping implement ML models that pull real-time market sentiment data.",
+      tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
+    },
     {
       title: "Software Engineering Intern",
       company: "FiPet",
@@ -85,18 +92,11 @@ export default function Portfolio() {
       tech: ["Business Strategy", "Product Management", "AI Solutions", "Lean Startup", "Market Research"]
     },
     {
-      title: "Robotics and Python Instructor",
+      title: "Assistant Facilitator",
       company: "STEMshala Enrichment Center",
       period: "June 2023 – August 2025",
       description: "Taught coding and robotics to kids aged 7-14. Created lesson plans and helped students build their own games and robots. Covered everything from basic Python to building autonomous robot challenges.",
       tech: ["Python", "Robotics", "Education Technology", "Curriculum Design"]
-    },
-    {
-      title: "AI/ML Project Manager",
-      company: "AI@UW (University of Wisconsin–Madison)",
-      period: "March 2023 – Present",
-      description: "Managing a team building a stock sentiment analysis dashboard. Coordinating development work, making technical decisions, and helping implement ML models that pull real-time market sentiment data.",
-      tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
     }
   ]
 
