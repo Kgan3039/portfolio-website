@@ -62,14 +62,14 @@ export default function Portfolio() {
     },
     {
       title: "TrueNeed",
-      description: "Developed a community-driven mobile application at a hackathon that connects people offering help with those in need. Built the entire matching algorithm and real-time notification system, creating seamless user flows for offers and requests with Firebase backend integration.",
+      description: "Developed a community-driven mobile application built during a hackathon that connects people offering help with those in need. Built the matching algorithm and real-time notification system, creating user flows for offers and requests with Firebase backend integration.",
       tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
       github: "https://github.com/kartikgangwar/trueneed",
       demo: null
     },
     {
       title: "Stock Sentiment ML Model",
-      description: "Engineered a machine learning model that analyzes social media sentiment to predict stock price fluctuations. Implemented NLP pipelines for sentiment extraction, trained classification models, and built data processing workflows to handle large-scale social media datasets.",
+      description: "Engineered a machine learning model that analyzes social media sentiment to predict stock price fluctuations. Implemented NLP pipelines for sentiment extraction, trained classification models, and built data processing workflows to handle social media datasets.",
       tech: ["Python", "NLP", "Machine Learning", "Pandas", "Scikit-learn"],
       github: "https://github.com/kartikgangwar/stock-sentiment",
       demo: null
@@ -81,7 +81,7 @@ export default function Portfolio() {
       title: "Software Engineering Intern",
       company: "FiPet",
       period: "Summer 2024",
-      description: "Developed and deployed backend features using Firebase Functions and TypeScript, handling real-time data synchronization for thousands of users. Designed and implemented gamification systems to boost user engagement by 35%. Collaborated with the product team to architect scalable cloud infrastructure and optimize application performance.",
+      description: "Developed and deployed backend features using Firebase Functions and TypeScript, handling real-time data synchronization for active users. Designed and implemented gamification systems to increase user engagement. Collaborated with the product team to architect scalable cloud infrastructure and optimize application performance.",
       tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
     },
     {
@@ -95,7 +95,7 @@ export default function Portfolio() {
       title: "AI/ML Research & Development",
       company: "Independent Projects & Hackathons",
       period: "2023 - Present",
-      description: "Built multiple machine learning models and AI-powered applications through hackathons and personal projects. Focused on NLP, sentiment analysis, and predictive modeling. Collaborated with cross-functional teams in fast-paced hackathon environments to deliver working prototypes within 24-48 hour timeframes.",
+      description: "Built multiple machine learning models and AI-powered applications through hackathons and personal projects. Focused on NLP, sentiment analysis, and predictive modeling. Collaborated with teams in hackathon environments to deliver working prototypes within tight timeframes.",
       tech: ["Python", "Machine Learning", "NLP", "Data Analysis"]
     }
   ]
