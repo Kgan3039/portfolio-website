@@ -79,17 +79,17 @@ export default function Portfolio() {
     },
     {
       title: "Robotics & JavaScript Instructor",
-      company: "Code Ninjas",
+      company: "STEMshala Enrichment Center",
       period: "Sept 2023 - May 2024",
       description: "Taught coding fundamentals, robotics programming, and JavaScript to students aged 7-14 in an interactive learning environment. Developed custom curriculum materials and guided students through building their own projects, from basic game development to advanced robot automation challenges.",
       tech: ["JavaScript", "Robotics", "Education Technology", "Curriculum Design"]
     },
     {
-      title: "AI/ML Research & Development",
-      company: "Independent Projects & Hackathons",
+      title: "AI/ML Project Manager",
+      company: "AI@UW (University of Wisconsin–Madison)",
       period: "2023 - Present",
-      description: "Built multiple machine learning models and AI-powered applications through hackathons and personal projects. Focused on NLP, sentiment analysis, and predictive modeling. Collaborated with teams in hackathon environments to deliver working prototypes within tight timeframes.",
-      tech: ["Python", "Machine Learning", "NLP", "Data Analysis"]
+      description: "Leading a team to build an AI-powered stock sentiment analysis dashboard. Managing project direction, coordinating development tasks, and guiding implementation of machine learning models for real-time insights.",
+      tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
     }
   ]
 
