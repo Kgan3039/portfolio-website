@@ -81,7 +81,7 @@ export default function Portfolio() {
       title: "Software Engineering Intern",
       company: "FiPet",
       period: "January 2026 – Present",
-      description: "Built backend features with Firebase Functions and TypeScript for a pet care app. Worked on real-time data sync and gamification features. Helped set up cloud infrastructure and improved load times.",
+      description: "Developed and deployed full-stack features for a production mobile application using Firebase, TypeScript, and cloud functions. Built application features, including backend image generation with Sharp, cloud storage integration, and frontend display logic. Designed scalable backend services for user progression and gamification systems, handling real-time data and cloud-based workflows. Collaborated in a team-based development environment using Git, code reviews, and iterative feature development to deliver production-ready functionality.",
       tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
     },
     {
