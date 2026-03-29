@@ -49,7 +49,7 @@ export default function Portfolio() {
     email: "kgangwar@wisc.edu",
     github: "https://github.com/Kgan3039",
     linkedin: "https://www.linkedin.com/in/kartik-gangwar",
-    resume: "/resume.pdf"
+    resume: "https://customer-assets.emergentagent.com/job_tech-profile-69/artifacts/b5hg1lad_UpdatedResumeKartikGangwar.pdf"
   }
 
   const projects = [
