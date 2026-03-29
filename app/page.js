@@ -55,14 +55,14 @@ export default function Portfolio() {
   const projects = [
     {
       title: "TrueNeed",
-      description: "Mobile app built during a hackathon connecting people who need help with those offering it. Built the matching system and real-time notifications using React Native and Firebase. Worked on the user flow for creating and responding to requests.",
+      description: "Built a full-stack mobile application during a hackathon connecting users offering resources with those in need, using React Native and Firebase. Designed and implemented a real-time matching system between offers and requests, including Firestore data models and live updates. Developed core user flows for creating, browsing, and responding to requests, along with notification-based interactions. Focused on building a scalable and intuitive system under time constraints, emphasizing real-time data handling and usability.",
       tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
       github: "https://github.com/Kgan3039/TrueNeed",
       demo: null
     },
     {
       title: "Stock Sentiment ML Model",
-      description: "Built a machine learning model that pulls social media data and uses NLP to predict stock movements. Trained classification models on sentiment data and built a pipeline to process Twitter posts and news headlines.",
+      description: "Developed a machine learning pipeline that analyzes social media and news data to predict stock sentiment using NLP techniques. Built and trained classification models using Python, Pandas, and scikit-learn, processing large volumes of text data. Designed a data pipeline to collect, clean, and transform Twitter posts and financial news into structured inputs for modeling. Focused on real-time applicability and improving prediction accuracy through feature engineering and model tuning.",
       tech: ["Python", "NLP", "Machine Learning", "Pandas", "Scikit-learn"],
       github: "https://github.com/Kgan3039/stock-prediction-bert",
       demo: null
