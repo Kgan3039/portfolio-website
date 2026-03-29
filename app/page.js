@@ -74,7 +74,7 @@ export default function Portfolio() {
       title: "AI/ML Project Manager",
       company: "AI@UW (University of Wisconsin–Madison)",
       period: "March 2026 – Present",
-      description: "Managing a team building a stock sentiment analysis dashboard. Coordinating development work, making technical decisions, and helping implement ML models that pull real-time market sentiment data.",
+      description: "Led a team of 4–5 developers to build a stock sentiment analysis platform using machine learning and real-time data. Designed and implemented core backend components and coordinated full-stack development across the team, ensuring efficient collaboration and project delivery. Developed machine learning models using social media data to analyze market sentiment and predict stock trends. Drove technical decision-making, project planning, and feature prioritization while guiding team members through development challenges.",
       tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
     },
     {
