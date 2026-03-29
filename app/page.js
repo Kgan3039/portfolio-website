@@ -103,7 +103,7 @@ export default function Portfolio() {
   const skills = {
     "Languages": ["Java", "Python", "TypeScript", "JavaScript", "HTML/CSS"],
     "Frameworks & Libraries": ["React", "React Native", "Next.js", "Node.js", "Firebase", "Scikit-learn", "Pandas", "NumPy", "TensorFlow"],
-    "Tools & Technologies": ["Git", "GitHub", "Docker", "Cloud Functions", "VS Code", "Linux"],
+    "Tools & Technologies": ["Git", "GitHub", "Firebase", "Firebase Cloud Functions", "Firestore", "REST APIs", "VS Code", "Linux"],
     "Data Science & AI": ["Machine Learning", "Natural Language Processing", "Data Analysis", "Sentiment Analysis", "Statistical Modeling"]
   }
 
