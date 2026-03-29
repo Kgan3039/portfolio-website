@@ -45,7 +45,7 @@ export default function Portfolio() {
   const personalInfo = {
     name: "Kartik Gangwar",
     tagline: "CS + Data Science @ UW–Madison · Software Engineer · ML Enthusiast",
-    bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison focused on building scalable software and AI-driven systems.\n\nI've worked on full-stack features at FiPet, including backend services with Firebase and frontend implementations for application features. I've also developed real-time mobile applications and built machine learning models for stock sentiment analysis.\n\nI'm currently seeking software engineering and AI/ML internship opportunities.",
+    bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison, focused on building scalable software and AI-driven systems.\n\nI've worked on full-stack features at FiPet, including backend services with Firebase and frontend implementations for application features. I've also developed real-time mobile applications and built machine learning models for stock sentiment analysis, with a focus on practical, real-world applications.\n\nI enjoy solving complex problems through full-stack development, cloud infrastructure, and data-driven approaches, and I'm always looking for opportunities to build impactful, production-ready systems.\n\nI'm currently seeking software engineering and AI/ML internship opportunities.",
     email: "kgangwar@wisc.edu",
     github: "https://github.com/Kgan3039",
     linkedin: "https://www.linkedin.com/in/kartik-gangwar",
