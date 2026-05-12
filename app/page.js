@@ -57,8 +57,9 @@ export default function Portfolio() {
       title: "FiPet",
       description: "Worked on a React Native/Expo mobile app with Firebase and Cloud Functions. Contributed to backend integration, feature development, Git workflows, branch testing, and app stability.",
       tech: ["React Native", "Expo", "TypeScript", "Firebase", "Firestore", "Cloud Functions", "Git/GitHub"],
-      github: "https://github.com/Kgan3039/fipet",
-      demo: null
+      github: null,
+      demo: "https://www.fipet.dev",
+      appStore: "https://apps.apple.com/us/app/fipet/id6751675558"
     },
     {
       title: "AI Market Sentiment Dashboard",
@@ -117,7 +118,7 @@ export default function Portfolio() {
   const skills = {
     "Languages": ["Java", "Python", "TypeScript", "JavaScript", "HTML/CSS"],
     "Frameworks & Libraries": ["React", "React Native", "Next.js", "Node.js", "Firebase", "Scikit-learn", "Pandas", "NumPy", "TensorFlow"],
-    "Tools & Technologies": ["Git", "GitHub", "Firebase", "Firebase Cloud Functions", "Firestore", "REST APIs", "VS Code", "Linux"],
+    "Tools & Technologies": ["Git", "GitHub", "Firebase", "Firebase Cloud Functions", "Firestore", "REST APIs", "SQL", "VS Code", "Linux"],
     "Data Science & AI": ["Machine Learning", "Natural Language Processing", "Data Analysis", "Sentiment Analysis", "Statistical Modeling"]
   }
 
@@ -330,6 +331,34 @@ export default function Portfolio() {
                     ))}
                   </div>
                   <div className="flex gap-3 pt-2">
+                    {project.demo && project.title === "FiPet" && (
+                      <>
+                        <Button 
+                          asChild
+                          variant="outline" 
+                          size="sm"
+                          className="border-slate-600 hover:bg-purple-600/10 hover:border-purple-500/50 hover:text-purple-400 transition-all duration-300 hover:scale-105"
+                        >
+                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            fipet.dev
+                          </a>
+                        </Button>
+                        {project.appStore && (
+                          <Button 
+                            asChild
+                            variant="outline" 
+                            size="sm"
+                            className="border-slate-600 hover:bg-blue-600/10 hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300 hover:scale-105"
+                          >
+                            <a href={project.appStore} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="mr-2 h-4 w-4" />
+                              App Store
+                            </a>
+                          </Button>
+                        )}
+                      </>
+                    )}
                     {project.github && (
                       <Button 
                         asChild
@@ -343,7 +372,7 @@ export default function Portfolio() {
                         </a>
                       </Button>
                     )}
-                    {project.demo && (
+                    {project.demo && project.title !== "FiPet" && (
                       <Button 
                         asChild
                         variant="outline" 
