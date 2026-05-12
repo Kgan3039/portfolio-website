@@ -54,6 +54,20 @@ export default function Portfolio() {
 
   const projects = [
     {
+      title: "FiPet",
+      description: "Worked on a React Native/Expo mobile app with Firebase and Cloud Functions. Contributed to backend integration, feature development, Git workflows, branch testing, and app stability.",
+      tech: ["React Native", "Expo", "TypeScript", "Firebase", "Firestore", "Cloud Functions", "Git/GitHub"],
+      github: "https://github.com/Kgan3039/fipet",
+      demo: null
+    },
+    {
+      title: "AI Market Sentiment Dashboard",
+      description: "Led a team building an end-to-end AI stock sentiment and prediction dashboard. The system processes financial news/social text, runs sentiment analysis, combines sentiment with market features, generates stock movement predictions, and displays everything in a React dashboard. Led project management, system integration, API contract alignment, and debugging across data, NLP, prediction, backend, and frontend components.",
+      tech: ["Python", "FastAPI", "React", "Vite", "NLP", "FinBERT", "Machine Learning", "REST APIs", "JSON", "Git/GitHub"],
+      github: "https://github.com/Kgan3039/ai-market-sentiment",
+      demo: null
+    },
+    {
       title: "TrueNeed",
       description: "Built a full-stack mobile application during a hackathon connecting users offering resources with those in need, using React Native and Firebase. Designed and implemented a real-time matching system between offers and requests, including Firestore data models and live updates. Developed core user flows for creating, browsing, and responding to requests, along with notification-based interactions. Focused on building a scalable and intuitive system under time constraints, emphasizing real-time data handling and usability.",
       tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
@@ -78,9 +92,9 @@ export default function Portfolio() {
       tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
     },
     {
-      title: "Software Engineering Intern",
+      title: "Chief Technology Officer",
       company: "FiPet",
-      period: "January 2026 – Present",
+      period: "October 2025 – Present",
       description: "Developed and deployed full-stack features for a production mobile application using Firebase, TypeScript, and cloud functions. Built application features, including backend image generation with Sharp, cloud storage integration, and frontend display logic. Designed scalable backend services for user progression and gamification systems, handling real-time data and cloud-based workflows. Collaborated in a team-based development environment using Git, code reviews, and iterative feature development to deliver production-ready functionality.",
       tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
     },
