@@ -96,7 +96,7 @@ export default function Portfolio() {
       title: "Chief Technology Officer",
       company: "FiPet",
       period: "October 2025 – Present",
-      description: "Developed and deployed full-stack features for a production mobile application using Firebase, TypeScript, and cloud functions. Built application features, including backend image generation with Sharp, cloud storage integration, and frontend display logic. Designed scalable backend services for user progression and gamification systems, handling real-time data and cloud-based workflows. Collaborated in a team-based development environment using Git, code reviews, and iterative feature development to deliver production-ready functionality.",
+      description: "Leading development and technical direction for FiPet, a mobile application with 300+ downloads built using React Native, Firebase, TypeScript, and cloud functions. Managing a small development team through feature planning, Git-based collaboration, integration testing, and iterative product development. Contributed to backend services, cloud storage integration, real-time data workflows, and scalable application features supporting user progression and gamification systems.",
       tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
     },
     {
