@@ -65,7 +65,7 @@ export default function Portfolio() {
       title: "AI Market Sentiment Dashboard",
       description: "Led a team building an end-to-end AI stock sentiment and prediction dashboard. The system processes financial news/social text, runs sentiment analysis, combines sentiment with market features, generates stock movement predictions, and displays everything in a React dashboard. Led project management, system integration, API contract alignment, and debugging across data, NLP, prediction, backend, and frontend components.",
       tech: ["Python", "FastAPI", "React", "Vite", "NLP", "FinBERT", "Machine Learning", "REST APIs", "JSON", "Git/GitHub"],
-      github: "https://github.com/Kgan3039/ai-market-sentiment",
+      github: "https://github.com/Kgan3039/ai-market-sentiment-dashboard",
       demo: null
     },
     {
