@@ -34,6 +34,14 @@ const nextConfig = {
           { key: "Access-Control-Allow-Headers", value: "*" },
         ],
       },
+      {
+        source: "/:path*.pdf",
+        headers: [
+          { key: "Content-Type", value: "application/pdf" },
+          { key: "Content-Disposition", value: "inline" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+        ],
+      },
     ];
   },
 };
