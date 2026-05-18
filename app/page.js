@@ -89,28 +89,28 @@ export default function Portfolio() {
       title: "AI/ML Project Manager",
       company: "AI@UW (University of Wisconsin–Madison)",
       period: "March 2026 – Present",
-      description: "Built and coordinated development of a full-stack AI market sentiment dashboard using FastAPI, React/Vite, and FinBERT-based NLP analysis. Developed backend/frontend API workflows, real-time market data ingestion pipelines, and ML prediction integrations across a 5-member engineering team. Focused on full-stack architecture, debugging, and deployment coordination for financial sentiment analysis systems.",
-      tech: ["FastAPI", "React/Vite", "FinBERT", "Python", "NLP", "REST APIs"]
+      description: "Built and coordinated development of a full-stack AI market sentiment dashboard across a 5-member engineering team using FastAPI, React/Vite, Python, and FinBERT-based NLP analysis. Developed backend/frontend API contracts supporting real-time financial headlines, market data ingestion, ML prediction outputs, and dashboard visualization systems. Also worked on debugging ML service integrations, validating backend workflows, and improving deployment reliability for live demo environments.",
+      tech: ["FastAPI", "React/Vite", "Python", "FinBERT", "NLP", "REST APIs"]
     },
     {
       title: "Lead Software Engineer (CTO)",
       company: "FiPet",
       period: "October 2025 – Present",
-      description: "Leading development of FiPet, a gamified financial literacy platform with 300+ downloads built using React Native, TypeScript, Firebase, Firestore, and Cloud Functions. Built backend APIs, authentication systems, and real-time gamification workflows while coordinating feature integration and sprint planning across a 20-person cross-functional team.",
-      tech: ["React Native", "Firebase", "TypeScript", "Firestore", "Cloud Functions"]
+      description: "Leading technical development for FiPet, a gamified financial literacy platform with 300+ downloads built using React Native, TypeScript, Firebase, Firestore, and Cloud Functions. Designed backend APIs, authentication systems, and real-time gamification workflows while coordinating feature integration and sprint planning across a 20-person cross-functional development team. Focused heavily on scalable mobile architecture, live content systems, and real-time user progression features.",
+      tech: ["React Native", "TypeScript", "Firebase", "Firestore", "Cloud Functions"]
     },
     {
       title: "Technology Strategy Intern",
       company: "iStart Valley",
       period: "June 2023 – October 2025",
-      description: "Developed technical prototypes and implementation plans for a VR-based mental health platform, including headset interaction workflows and immersive therapeutic environments. Applied lean startup principles and technical research to evaluate AI-driven product concepts and user experience systems.",
+      description: "Worked in a selective innovation and entrepreneurship internship program focused on AI-driven startup development. Developed technical prototypes and implementation plans for a VR-based mental health platform, including headset interaction workflows and immersive therapeutic environments. Applied lean startup principles, product-market fit analysis, and technical research to evaluate user experience systems and business viability.",
       tech: ["VR", "AI Solutions", "Product Strategy", "UX Systems"]
     },
     {
       title: "Software Engineering Instructor",
       company: "STEMShala Enrichment Center",
       period: "June 2023 – August 2025",
-      description: "Taught Python, JavaScript, and robotics concepts to 40+ students through hands-on programming projects and autonomous robotics challenges. Designed technical lesson plans focused on problem-solving, software development fundamentals, and sensor-based robotics systems.",
+      description: "Taught Python, JavaScript, and robotics concepts to 40+ students through hands-on programming projects and autonomous robotics challenges. Designed technical lesson plans and engineering exercises focused on problem-solving, software development fundamentals, sensor integration, and robotics system design.",
       tech: ["Python", "JavaScript", "Robotics", "Education"]
     }
   ]
