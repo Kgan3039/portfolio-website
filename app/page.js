@@ -89,29 +89,29 @@ export default function Portfolio() {
       title: "AI/ML Project Manager",
       company: "AI@UW (University of Wisconsin–Madison)",
       period: "March 2026 – Present",
-      description: "Led a team of 4–5 developers to build a stock sentiment analysis platform using machine learning and real-time data. Designed and implemented core backend components and coordinated full-stack development across the team, ensuring efficient collaboration and project delivery. Developed machine learning models using social media data to analyze market sentiment and predict stock trends. Drove technical decision-making, project planning, and feature prioritization while guiding team members through development challenges.",
-      tech: ["Python", "Machine Learning", "NLP", "Project Management", "Data Analysis"]
+      description: "Built and coordinated development of a full-stack AI market sentiment dashboard using FastAPI, React/Vite, and FinBERT-based NLP analysis. Developed backend/frontend API workflows, real-time market data ingestion pipelines, and ML prediction integrations across a 5-member engineering team. Focused on full-stack architecture, debugging, and deployment coordination for financial sentiment analysis systems.",
+      tech: ["FastAPI", "React/Vite", "FinBERT", "Python", "NLP", "REST APIs"]
     },
     {
-      title: "Chief Technology Officer",
+      title: "Lead Software Engineer (CTO)",
       company: "FiPet",
       period: "October 2025 – Present",
-      description: "Leading development and technical direction for FiPet, a mobile application with 300+ downloads built using React Native, Firebase, TypeScript, and cloud functions. Managing a small development team through feature planning, Git-based collaboration, integration testing, and iterative product development. Contributed to backend services, cloud storage integration, real-time data workflows, and scalable application features supporting user progression and gamification systems.",
-      tech: ["TypeScript", "Firebase", "Cloud Functions", "Node.js"]
+      description: "Leading development of FiPet, a gamified financial literacy platform with 300+ downloads built using React Native, TypeScript, Firebase, Firestore, and Cloud Functions. Built backend APIs, authentication systems, and real-time gamification workflows while coordinating feature integration and sprint planning across a 20-person cross-functional team.",
+      tech: ["React Native", "Firebase", "TypeScript", "Firestore", "Cloud Functions"]
     },
     {
-      title: "Summer Intern",
-      company: "iStartValley",
-      period: "June 2024 – October 2025",
-      description: "Worked in a selective internship program focused on innovation and entrepreneurship. Led a team of interns to research market opportunities, develop business models, and build AI-driven solutions. Applied lean startup principles, conducted product-market fit analysis, and presented final pitches to executives and entrepreneurs.",
-      tech: ["Business Strategy", "Product Management", "AI Solutions", "Lean Startup", "Market Research"]
+      title: "Technology Strategy Intern",
+      company: "iStart Valley",
+      period: "June 2023 – October 2025",
+      description: "Developed technical prototypes and implementation plans for a VR-based mental health platform, including headset interaction workflows and immersive therapeutic environments. Applied lean startup principles and technical research to evaluate AI-driven product concepts and user experience systems.",
+      tech: ["VR", "AI Solutions", "Product Strategy", "UX Systems"]
     },
     {
-      title: "Assistant Facilitator",
-      company: "STEMshala Enrichment Center",
+      title: "Software Engineering Instructor",
+      company: "STEMShala Enrichment Center",
       period: "June 2023 – August 2025",
-      description: "Taught coding and robotics to kids aged 7-14. Created lesson plans and helped students build their own games and robots. Covered everything from basic Python to building autonomous robot challenges.",
-      tech: ["Python", "Robotics", "Education Technology", "Curriculum Design"]
+      description: "Taught Python, JavaScript, and robotics concepts to 40+ students through hands-on programming projects and autonomous robotics challenges. Designed technical lesson plans focused on problem-solving, software development fundamentals, and sensor-based robotics systems.",
+      tech: ["Python", "JavaScript", "Robotics", "Education"]
     }
   ]
 
@@ -402,7 +402,7 @@ export default function Portfolio() {
           <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
             Experience
           </h2>
-          <p className="text-slate-400 text-lg mb-16 max-w-2xl">Building products and gaining real-world experience</p>
+          <p className="text-slate-400 text-lg mb-16 max-w-2xl">Building scalable systems and shipping production software</p>
           
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -413,19 +413,19 @@ export default function Portfolio() {
                 {/* Glow effect on hover */}
                 <div className="absolute -left-[2px] top-[7px] w-1 h-20 bg-gradient-to-b from-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
-                <div className="space-y-4 bg-slate-800/30 p-6 rounded-lg border border-slate-700/30 group-hover:border-blue-500/30 group-hover:bg-slate-800/50 transition-all duration-300">
-                  <div>
+                <div className="space-y-5 bg-slate-800/30 p-6 rounded-lg border border-slate-700/30 group-hover:border-blue-500/30 group-hover:bg-slate-800/50 transition-all duration-300">
+                  <div className="space-y-1">
                     <h3 className="text-2xl font-semibold text-slate-100 group-hover:text-blue-400 transition-colors duration-300">{exp.title}</h3>
-                    <p className="text-blue-400 font-medium text-lg mt-1">{exp.company}</p>
-                    <p className="text-sm text-slate-500 mt-1">{exp.period}</p>
+                    <p className="text-blue-400 font-medium text-lg">{exp.company}</p>
+                    <p className="text-sm text-slate-500">{exp.period}</p>
                   </div>
-                  <p className="text-slate-300 leading-relaxed text-lg">{exp.description}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <p className="text-slate-300 leading-relaxed text-base max-w-3xl">{exp.description}</p>
+                  <div className="flex flex-wrap gap-2 pt-1">
                     {exp.tech.map((tech, i) => (
                       <Badge 
                         key={i} 
                         variant="outline" 
-                        className="border-slate-600/50 text-slate-400 hover:border-blue-500/50 hover:text-blue-400 transition-colors duration-300"
+                        className="text-xs border-slate-600/50 text-slate-400 hover:border-blue-500/50 hover:text-blue-400 transition-colors duration-300 px-2.5 py-0.5"
                       >
                         {tech}
                       </Badge>
