@@ -102,7 +102,7 @@ export default function Portfolio() {
     {
       title: "Technology Strategy Intern",
       company: "iStart Valley",
-      period: "June 2023 – August 2023",
+      period: "June 2023 – September 2023",
       description: "Worked in a selective innovation and entrepreneurship internship program focused on AI-driven startup development. Developed technical prototypes and implementation plans for a VR-based mental health platform, including headset interaction workflows and immersive therapeutic environments. Applied lean startup principles, product-market fit analysis, and technical research to evaluate user experience systems and business viability.",
       tech: ["VR", "AI Solutions", "Product Strategy", "UX Systems"]
     },
