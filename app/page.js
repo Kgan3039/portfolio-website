@@ -55,30 +55,30 @@ export default function Portfolio() {
   const projects = [
     {
       title: "FiPet",
-      description: "Worked on a React Native/Expo mobile app with Firebase and Cloud Functions. Contributed to backend integration, feature development, Git workflows, branch testing, and app stability.",
-      tech: ["React Native", "Expo", "TypeScript", "Firebase", "Firestore", "Cloud Functions", "Git/GitHub"],
+      description: "Developing FiPet, a React Native financial literacy platform using TypeScript, Firebase, Firestore, and Cloud Functions. Built backend integrations, authentication workflows, real-time data systems, and gamification features supporting live user progression and scalable mobile interactions.",
+      tech: ["React Native", "TypeScript", "Firebase", "Firestore", "Cloud Functions", "Git/GitHub"],
       github: null,
       demo: "https://www.fipet.dev",
       appStore: "https://apps.apple.com/us/app/fipet/id6751675558"
     },
     {
       title: "AI Market Sentiment Dashboard",
-      description: "Led a team building an end-to-end AI stock sentiment and prediction dashboard. The system processes financial news/social text, runs sentiment analysis, combines sentiment with market features, generates stock movement predictions, and displays everything in a React dashboard. Led project management, system integration, API contract alignment, and debugging across data, NLP, prediction, backend, and frontend components.",
-      tech: ["Python", "FastAPI", "React", "Vite", "NLP", "FinBERT", "Machine Learning", "REST APIs", "JSON", "Git/GitHub"],
+      description: "Built a full-stack AI market sentiment dashboard using FastAPI, React/Vite, Python, and FinBERT-based NLP pipelines for real-time stock analysis. Developed backend APIs, market data ingestion workflows, ML prediction integrations, and frontend visualization systems across a multi-member engineering team.",
+      tech: ["Python", "FastAPI", "React", "Vite", "NLP", "FinBERT", "REST APIs", "Machine Learning"],
       github: "https://github.com/Kgan3039/ai-market-sentiment-dashboard",
       demo: null
     },
     {
       title: "TrueNeed",
-      description: "Built a full-stack mobile application during a hackathon connecting users offering resources with those in need, using React Native and Firebase. Designed and implemented a real-time matching system between offers and requests, including Firestore data models and live updates. Developed core user flows for creating, browsing, and responding to requests, along with notification-based interactions. Focused on building a scalable and intuitive system under time constraints, emphasizing real-time data handling and usability.",
-      tech: ["React Native", "Firebase", "JavaScript", "Real-time Database"],
+      description: "Built a real-time mutual aid mobile platform using React Native and Firebase during a hackathon event with 80+ participants and 8 judges. Designed Firestore-backed matching systems, authentication workflows, and real-time database synchronization for scalable resource distribution and live user interactions.",
+      tech: ["React Native", "Firebase", "Firestore", "TypeScript", "Real-time Database"],
       github: "https://github.com/Kgan3039/TrueNeed",
       demo: null
     },
     {
       title: "Stock Sentiment ML Model",
-      description: "Developed a machine learning pipeline that analyzes social media and news data to predict stock sentiment using NLP techniques. Built and trained classification models using Python, Pandas, and scikit-learn, processing large volumes of text data. Designed a data pipeline to collect, clean, and transform Twitter posts and financial news into structured inputs for modeling. Focused on real-time applicability and improving prediction accuracy through feature engineering and model tuning.",
-      tech: ["Python", "NLP", "Machine Learning", "Pandas", "Scikit-learn"],
+      description: "Developed an NLP-based machine learning pipeline for financial sentiment classification using Python, scikit-learn, and social/news datasets. Built preprocessing, feature engineering, and model evaluation workflows for large-scale text analysis and stock sentiment prediction.",
+      tech: ["Python", "NLP", "Machine Learning", "scikit-learn", "Pandas"],
       github: "https://github.com/Kgan3039/stock-prediction-bert",
       demo: null
     }
@@ -86,7 +86,7 @@ export default function Portfolio() {
 
   const experiences = [
     {
-      title: "AI/ML Project Manager",
+      title: "Software Engineer Project Manager",
       company: "AI@UW (University of Wisconsin–Madison)",
       period: "March 2026 – Present",
       description: "Built and coordinated development of a full-stack AI market sentiment dashboard across a 5-member engineering team using FastAPI, React/Vite, Python, and FinBERT-based NLP analysis. Developed backend/frontend API contracts supporting real-time financial headlines, market data ingestion, ML prediction outputs, and dashboard visualization systems. Also worked on debugging ML service integrations, validating backend workflows, and improving deployment reliability for live demo environments.",
@@ -314,17 +314,17 @@ export default function Portfolio() {
                     {project.title}
                     <ArrowRight className="h-5 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                   </CardTitle>
-                  <CardDescription className="text-slate-400 text-base leading-relaxed mt-3">
+                  <CardDescription className="text-slate-400 text-base leading-relaxed mt-3 max-w-2xl">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6 relative z-10">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((tech, i) => (
                       <Badge 
                         key={i} 
                         variant="secondary" 
-                        className="bg-slate-700/50 text-slate-300 hover:bg-blue-600/20 hover:text-blue-400 border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105"
+                        className="text-xs bg-slate-700/50 text-slate-300 hover:bg-blue-600/20 hover:text-blue-400 border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 px-2.5 py-0.5"
                       >
                         {tech}
                       </Badge>
