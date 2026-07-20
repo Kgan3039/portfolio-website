@@ -394,12 +394,12 @@ export default function Portfolio() {
                 <div className="hidden lg:flex items-center justify-center">
                   <motion.div
                     whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                    onClick={() => setLightboxImage('/project-images/ai-dashboard.png')}
+                    onClick={() => setLightboxImage('/project-images/studi-mobile.png')}
                     className="relative w-full max-w-xs aspect-[9/19] bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-[2.5rem] p-3 shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
                   >
                     <div className="w-full h-full bg-[var(--bg-primary)] rounded-[2rem] border border-[var(--border-subtle)] overflow-hidden">
                       <Image
-                        src="/project-images/ai-dashboard.png"
+                        src="/project-images/studi-mobile.png"
                         alt="Studi mobile app showing Good evening Kartik, upcoming study sessions, and class schedule"
                         width={375}
                         height={812}
@@ -445,7 +445,7 @@ export default function Portfolio() {
                 {/* Browser Preview */}
                 <motion.div
                   whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                  onClick={() => setLightboxImage('/project-images/studi-mobile.png')}
+                  onClick={() => setLightboxImage('/project-images/ai-dashboard.png')}
                   className="mb-4 rounded-md border border-[var(--border-subtle)] overflow-hidden bg-[var(--bg-tertiary)] cursor-pointer hover:shadow-lg transition-shadow"
                 >
                   <div className="h-6 bg-[var(--bg-elevated)] border-b border-[var(--border-subtle)] flex items-center px-3 gap-1.5">
@@ -455,7 +455,7 @@ export default function Portfolio() {
                   </div>
                   <div className="p-2">
                     <Image
-                      src="/project-images/studi-mobile.png"
+                      src="/project-images/ai-dashboard.png"
                       alt="AI Market Sentiment Dashboard with sentiment analysis, probability mix, NVDA price history, and market headlines"
                       width={800}
                       height={600}
@@ -746,15 +746,213 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section id="about" className="py-20 section-container">
-        <div className="h-96 flex items-center justify-center border border-[var(--border-subtle)] rounded-lg">
-          <p className="text-[var(--text-tertiary)]">About Section (Stage 5)</p>
+      {/* About Section */}
+      <section id="about" className="py-20 sm:py-24">
+        <div className="section-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+          >
+            <motion.div variants={itemVariants} className="mb-12">
+              <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text-primary)] mb-3">
+                About
+              </h2>
+              <p className="text-[var(--text-secondary)] text-lg">
+                Building systems that work reliably at scale.
+              </p>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="max-w-3xl">
+              <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
+                I'm a Computer Science and Data Science student at UW–Madison focused on backend systems, mobile applications, and data pipelines. I build products that turn complex workflows into reliable, maintainable systems.
+              </p>
+              
+              <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
+                My work spans real-time data synchronization, class-based matching algorithms, sentiment analysis pipelines, and mobile-first architectures. I care about system design, clean abstractions, and delivering features that users can trust.
+              </p>
+
+              <p className="text-[var(--text-tertiary)] text-base leading-relaxed">
+                Currently building Studi — a study coordination platform for UW–Madison students that solves session discovery and peer matching at scale.
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
-      <section id="contact" className="py-20 section-container">
-        <div className="h-96 flex items-center justify-center border border-[var(--border-subtle)] rounded-lg">
-          <p className="text-[var(--text-tertiary)]">Contact Section (Stage 5)</p>
+      {/* Technical Profile Section */}
+      <section className="py-20 sm:py-24 bg-[var(--bg-secondary)]/30">
+        <div className="section-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+          >
+            <motion.div variants={itemVariants} className="mb-12">
+              <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text-primary)] mb-3">
+                Technical Profile
+              </h2>
+              <p className="text-[var(--text-secondary)] text-lg">
+                Tools and technologies I work with to build reliable systems.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Languages */}
+              <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
+                <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
+                  Languages
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {['Python', 'TypeScript', 'JavaScript', 'Java', 'SQL', 'C++'].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Backend & Data */}
+              <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
+                <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
+                  Backend & Data
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {['FastAPI', 'Node.js', 'Firebase', 'PostgreSQL', 'MongoDB', 'Firestore', 'Redis'].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Frontend & Mobile */}
+              <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
+                <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
+                  Frontend & Mobile
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {['React Native', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* ML & AI */}
+              <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
+                <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
+                  ML & AI
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {['TensorFlow', 'Keras', 'PyTorch', 'scikit-learn', 'Pandas', 'NumPy', 'FinBERT'].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Tools & Platforms */}
+              <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg md:col-span-2">
+                <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
+                  Tools & Platforms
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {['Git', 'Docker', 'AWS', 'Vercel', 'PostHog', 'Jupyter', 'VS Code', 'Linux'].map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 sm:py-24">
+        <div className="section-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="max-w-2xl mx-auto text-center"
+          >
+            <motion.div variants={itemVariants}>
+              <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text-primary)] mb-4">
+                Get in Touch
+              </h2>
+              <p className="text-[var(--text-secondary)] text-lg mb-8">
+                Open to discussing projects, collaborations, or opportunities.
+              </p>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <a
+                href="mailto:kgangwar@wisc.edu"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent-primary)] text-white rounded-md hover:bg-[var(--accent-primary)]/90 transition-colors font-medium"
+              >
+                Email Me
+              </a>
+              <a
+                href="/2026GangwarKartikResume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)] rounded-md hover:border-[var(--accent-primary)]/30 transition-colors font-medium"
+              >
+                <FileText size={18} />
+                View Resume
+              </a>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="flex items-center justify-center gap-6">
+              <a
+                href="https://github.com/Kgan3039"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
+              >
+                <Github size={20} />
+                <span className="text-sm font-medium">GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kartik-gangwar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
+              >
+                <Linkedin size={20} />
+                <span className="text-sm font-medium">LinkedIn</span>
+              </a>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mt-12 pt-8 border-t border-[var(--border-subtle)]">
+              <p className="text-sm text-[var(--text-tertiary)]">
+                © 2026 Kartik Gangwar. Built with Next.js and Tailwind CSS.
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>
