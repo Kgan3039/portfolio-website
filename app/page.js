@@ -285,30 +285,59 @@ export default function Portfolio() {
             <motion.div
               id="studi"
               variants={itemVariants}
-              className="group relative mb-8 p-8 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--border-muted)] transition-all duration-300 hover:translate-y-[-2px]"
+              className="group relative mb-8 p-8 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px]"
             >
               {/* Status Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-full text-xs font-medium text-[var(--text-secondary)] mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--accent-primary)]/10 border border-[var(--accent-primary)]/20 rounded-full text-xs font-medium text-[var(--accent-primary)] mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]"></span>
-                In active development — preparing for UW–Madison launch
+                In Active Development
               </div>
 
-              <div className="grid lg:grid-cols-[1fr,1.5fr] gap-8">
-                {/* Left Column - Overview */}
+              <div className="grid lg:grid-cols-[1.2fr,1fr] gap-8">
+                {/* Left Column - Story */}
                 <div>
                   <h3 className="text-2xl font-medium text-[var(--text-primary)] mb-3 group-hover:text-[var(--accent-primary)] transition-colors">
                     Studi
                   </h3>
                   
-                  <p className="text-[var(--text-secondary)] text-base mb-6 leading-relaxed">
-                    A study coordination platform helping UW–Madison students discover relevant study sessions and connect with classmates.
+                  <p className="text-[var(--text-secondary)] text-sm font-medium mb-2">
+                    Study coordination platform for UW–Madison students
+                  </p>
+                  
+                  <p className="text-[var(--text-tertiary)] text-base mb-6 leading-relaxed">
+                    Connects students with relevant study sessions based on class enrollment and preferences. Built to solve session discovery and peer coordination at scale.
                   </p>
 
+                  <div className="mb-6 pb-6 border-b border-[var(--border-subtle)]">
+                    <p className="text-sm font-medium text-[var(--text-primary)] mb-3">What I Built</p>
+                    <p className="text-sm text-[var(--text-tertiary)] leading-relaxed">
+                      Mobile application and backend architecture: authentication, class-aware session matching, real-time messaging, analytics instrumentation, and moderation foundations.
+                    </p>
+                  </div>
+
+                  {/* Engineering Highlights - Compact */}
+                  <div className="space-y-3 mb-6">
+                    <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Engineering Focus</p>
+                    <div className="space-y-2">
+                      {[
+                        'Session discovery with class and preference-based matching',
+                        'Real-time sync for sessions, messages, and user state via Firestore',
+                        'Rate limiting, reporting workflows, and privacy-focused access controls',
+                        'Onboarding and engagement funnel instrumentation with PostHog'
+                      ].map((highlight, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <span className="text-[var(--accent-primary)] mt-1 text-xs">→</span>
+                          <span className="text-[var(--text-tertiary)] leading-relaxed">{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* Tech Stack */}
-                  <div className="mb-6">
-                    <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] mb-3 font-medium">Technology</p>
+                  <div>
+                    <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] mb-2 font-medium">Stack</p>
                     <div className="flex flex-wrap gap-2">
-                      {['React Native', 'Expo', 'TypeScript', 'Firebase Auth', 'Firestore', 'Expo Router', 'PostHog'].map((tech) => (
+                      {['React Native', 'Expo', 'TypeScript', 'Firebase', 'Firestore', 'PostHog'].map((tech) => (
                         <span
                           key={tech}
                           className="px-2.5 py-1 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -318,50 +347,26 @@ export default function Portfolio() {
                       ))}
                     </div>
                   </div>
-
-                  {/* Role */}
-                  <div>
-                    <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] mb-2 font-medium">My Role</p>
-                    <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                      Building the mobile application and backend architecture, including authentication, session discovery, matching logic, messaging workflows, analytics instrumentation, and reliability improvements.
-                    </p>
-                  </div>
                 </div>
 
-                {/* Right Column - Engineering Highlights */}
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] mb-4 font-medium">Engineering Highlights</p>
-                  <div className="space-y-4">
-                    {[
-                      {
-                        title: 'Session Discovery & Matching',
-                        desc: 'Designed class- and preference-aware session discovery and matching workflows'
-                      },
-                      {
-                        title: 'Real-time Synchronization',
-                        desc: 'Built real-time session, messaging, and user-state synchronization with Firestore'
-                      },
-                      {
-                        title: 'Safety & Privacy',
-                        desc: 'Added rate limiting, moderation/reporting foundations, and privacy-focused access controls'
-                      },
-                      {
-                        title: 'Analytics Instrumentation',
-                        desc: 'Instrumented onboarding, session creation, joining, and messaging funnels through PostHog'
-                      }
-                    ].map((highlight, idx) => (
-                      <div
-                        key={idx}
-                        className="p-4 bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-md"
-                      >
-                        <h4 className="text-sm font-medium text-[var(--text-primary)] mb-1.5">
-                          {highlight.title}
-                        </h4>
-                        <p className="text-sm text-[var(--text-tertiary)] leading-relaxed">
-                          {highlight.desc}
+                {/* Right Column - Visual Placeholder */}
+                <div className="hidden lg:flex items-center justify-center">
+                  <div className="relative w-full max-w-xs aspect-[9/19] bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-[2.5rem] p-3 shadow-lg">
+                    {/* iPhone Frame */}
+                    <div className="w-full h-full bg-[var(--bg-primary)] rounded-[2rem] border border-[var(--border-subtle)] flex items-center justify-center">
+                      <div className="text-center px-8">
+                        <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-[var(--accent-primary)]/20 border border-[var(--accent-primary)]/30 flex items-center justify-center">
+                          <span className="text-2xl">📚</span>
+                        </div>
+                        <p className="text-xs text-[var(--text-tertiary)]">
+                          Studi
+                          <br />
+                          <span className="text-[var(--text-tertiary)]/50">Mockup placeholder</span>
                         </p>
                       </div>
-                    ))}
+                    </div>
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[var(--bg-primary)] rounded-b-2xl"></div>
                   </div>
                 </div>
               </div>
@@ -372,15 +377,15 @@ export default function Portfolio() {
               {/* AI Market Sentiment Dashboard */}
               <motion.div
                 variants={itemVariants}
-                className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--border-muted)] transition-all duration-300 hover:translate-y-[-2px]"
+                className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px]"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-primary)] transition-colors">
+                    <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors">
                       AI Market Sentiment Dashboard
                     </h3>
-                    <p className="text-xs text-[var(--text-tertiary)] uppercase tracking-wide font-medium">
-                      Completed team project / working MVP
+                    <p className="text-xs text-[var(--text-tertiary)] font-medium">
+                      Completed team project
                     </p>
                   </div>
                   <a
@@ -389,33 +394,31 @@ export default function Portfolio() {
                     rel="noopener noreferrer"
                     className="p-2 text-[var(--text-tertiary)] hover:text-[var(--accent-primary)] transition-colors"
                   >
-                    <Github size={20} />
+                    <Github size={18} />
                   </a>
                 </div>
 
                 <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
-                  A market intelligence dashboard that combines financial headlines, sentiment analysis, market data, and ML prediction outputs.
+                  Real-time AI pipeline combining financial headlines, FinBERT-based sentiment analysis, market data, and ML prediction outputs into a unified dashboard.
                 </p>
 
-                <div className="mb-4">
-                  <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] mb-2 font-medium">Key Contributions</p>
-                  <ul className="space-y-1.5 text-sm text-[var(--text-tertiary)]">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--accent-primary)] mt-0.5">→</span>
-                      <span>Developed backend/frontend API contracts supporting real-time financial headlines and ML outputs</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--accent-primary)] mt-0.5">→</span>
-                      <span>Built market data ingestion pipelines and dashboard visualization systems</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--accent-primary)] mt-0.5">→</span>
-                      <span>Coordinated full-stack development across a 5-member engineering team</span>
-                    </li>
-                  </ul>
+                <div className="mb-4 space-y-2">
+                  <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Engineering Challenge</p>
+                  <div className="space-y-1.5">
+                    {[
+                      'Backend/frontend API contracts for real-time headlines and ML outputs',
+                      'Market data ingestion pipelines with validation and error handling',
+                      'Coordinated full-stack development across 5-member team'
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm">
+                        <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
+                        <span className="text-[var(--text-tertiary)] leading-relaxed">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {['FastAPI', 'React/Vite', 'Python', 'FinBERT', 'NLP'].map((tech) => (
                     <span
                       key={tech}
@@ -430,15 +433,15 @@ export default function Portfolio() {
               {/* TrueNeed */}
               <motion.div
                 variants={itemVariants}
-                className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--border-muted)] transition-all duration-300 hover:translate-y-[-2px]"
+                className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px]"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-primary)] transition-colors">
+                    <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors">
                       TrueNeed
                     </h3>
-                    <p className="text-xs text-[var(--text-tertiary)] uppercase tracking-wide font-medium">
-                      Hackathon project
+                    <p className="text-xs text-[var(--text-tertiary)] font-medium">
+                      Hackathon project • 24 hours
                     </p>
                   </div>
                   <a
@@ -447,33 +450,31 @@ export default function Portfolio() {
                     rel="noopener noreferrer"
                     className="p-2 text-[var(--text-tertiary)] hover:text-[var(--accent-primary)] transition-colors"
                   >
-                    <Github size={20} />
+                    <Github size={18} />
                   </a>
                 </div>
 
                 <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
-                  A real-time mutual-aid platform with request/offer posting, resource matching, authentication, and synchronized feeds.
+                  Real-time mutual-aid platform with request/offer posting, Firestore-backed resource matching, and live feed synchronization.
                 </p>
 
-                <div className="mb-4">
-                  <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] mb-2 font-medium">What Made It Hard</p>
-                  <ul className="space-y-1.5 text-sm text-[var(--text-tertiary)]">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--accent-primary)] mt-0.5">→</span>
-                      <span>Built during hackathon with 80+ participants — shipped in 24 hours</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--accent-primary)] mt-0.5">→</span>
-                      <span>Designed Firestore-backed matching systems and real-time database synchronization</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--accent-primary)] mt-0.5">→</span>
-                      <span>Implemented authentication workflows and live user interactions under time pressure</span>
-                    </li>
-                  </ul>
+                <div className="mb-4 space-y-2">
+                  <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Challenge</p>
+                  <div className="space-y-1.5">
+                    {[
+                      'Built complete platform in 24 hours with 80+ hackathon participants',
+                      'Real-time matching system and database synchronization under pressure',
+                      'Authentication workflows and live user interactions from scratch'
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm">
+                        <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
+                        <span className="text-[var(--text-tertiary)] leading-relaxed">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {['React Native', 'Firebase', 'Firestore', 'TypeScript'].map((tech) => (
                     <span
                       key={tech}
@@ -484,15 +485,201 @@ export default function Portfolio() {
                   ))}
                 </div>
               </motion.div>
+
+              {/* CNN Image Recognition */}
+              <motion.div
+                variants={itemVariants}
+                className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px] md:col-span-2"
+              >
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors">
+                          CNN Image Recognition for Medical Imaging
+                        </h3>
+                        <p className="text-xs text-[var(--text-tertiary)] font-medium">
+                          Research project
+                        </p>
+                      </div>
+                    </div>
+
+                    <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
+                      Convolutional neural network for medical image classification using transfer learning and data augmentation techniques.
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5">
+                      {['Python', 'TensorFlow', 'Keras', 'OpenCV', 'NumPy'].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Approach</p>
+                    <div className="space-y-1.5">
+                      {[
+                        'Transfer learning from pre-trained models (ResNet, VGG)',
+                        'Data preprocessing pipeline with augmentation and normalization',
+                        'Model evaluation with cross-validation and performance metrics'
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
+                          <span className="text-[var(--text-tertiary)] leading-relaxed">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Placeholder sections */}
-      <section id="experience" className="py-20 section-container">
-        <div className="h-96 flex items-center justify-center border border-[var(--border-subtle)] rounded-lg">
-          <p className="text-[var(--text-tertiary)]">Experience Section (Stage 4)</p>
+      {/* Experience Section */}
+      <section id="experience" className="py-20 sm:py-24 bg-[var(--bg-secondary)]/30">
+        <div className="section-container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+          >
+            <motion.div variants={itemVariants} className="mb-16">
+              <h2 className="text-3xl sm:text-4xl font-medium tracking-tight text-[var(--text-primary)] mb-3">
+                Experience
+              </h2>
+              <p className="text-[var(--text-secondary)] text-lg">
+                Building production systems and shipping reliable software.
+              </p>
+            </motion.div>
+
+            {/* Timeline */}
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--accent-primary)] via-[var(--accent-primary)]/50 to-transparent hidden md:block"></div>
+
+              {/* Experience Items */}
+              <div className="space-y-12">
+                {[
+                  {
+                    company: 'AI@UW',
+                    role: 'Software Engineering Project Manager',
+                    time: 'March 2026 – Present',
+                    contributions: [
+                      'Built full-stack AI market sentiment dashboard across 5-member team using FastAPI, React/Vite, and FinBERT',
+                      'Developed backend/frontend API contracts for real-time financial data and ML predictions',
+                      'Coordinated deployment reliability and ML service integration debugging'
+                    ],
+                    impact: 'Shipped working MVP with end-to-end AI pipeline',
+                    tech: ['FastAPI', 'React/Vite', 'Python', 'FinBERT']
+                  },
+                  {
+                    company: 'FiPet',
+                    role: 'Lead Software Engineer',
+                    time: 'October 2025 – Present',
+                    contributions: [
+                      'Leading technical development for gamified financial literacy platform (300+ downloads)',
+                      'Designed backend APIs, authentication systems, and real-time gamification workflows',
+                      'Coordinated feature integration across 20-person cross-functional team'
+                    ],
+                    impact: 'Built scalable mobile architecture with live content systems',
+                    tech: ['React Native', 'TypeScript', 'Firebase', 'Firestore']
+                  },
+                  {
+                    company: 'iStart Valley',
+                    role: 'Technology Strategy Intern',
+                    time: 'June 2023 – September 2023',
+                    contributions: [
+                      'Developed technical prototypes for VR-based mental health platform',
+                      'Designed headset interaction workflows and immersive environments',
+                      'Applied lean startup principles and product-market fit analysis'
+                    ],
+                    impact: 'Evaluated AI-driven product concepts and UX systems',
+                    tech: ['VR', 'AI Solutions', 'Product Strategy']
+                  },
+                  {
+                    company: 'STEMShala Enrichment Center',
+                    role: 'Software Engineering Instructor',
+                    time: 'June 2023 – August 2025',
+                    contributions: [
+                      'Taught Python, JavaScript, and robotics to 40+ students',
+                      'Designed technical lesson plans and engineering exercises',
+                      'Built autonomous robotics challenges with sensor integration'
+                    ],
+                    impact: 'Developed software fundamentals curriculum',
+                    tech: ['Python', 'JavaScript', 'Robotics']
+                  }
+                ].map((exp, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={itemVariants}
+                    className="relative md:pl-12"
+                  >
+                    {/* Timeline marker */}
+                    <div className="absolute left-[-5px] top-1 w-2.5 h-2.5 rounded-full bg-[var(--accent-primary)] border-2 border-[var(--bg-primary)] hidden md:block"></div>
+
+                    <div className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300">
+                      {/* Header */}
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                        <div>
+                          <h3 className="text-lg font-medium text-[var(--text-primary)]">
+                            {exp.role}
+                          </h3>
+                          <p className="text-[var(--accent-primary)] text-sm font-medium">
+                            {exp.company}
+                          </p>
+                        </div>
+                        <p className="text-xs text-[var(--text-tertiary)] font-medium">
+                          {exp.time}
+                        </p>
+                      </div>
+
+                      {/* Contributions */}
+                      <div className="space-y-2 mb-4">
+                        {exp.contributions.map((contribution, cidx) => (
+                          <div key={cidx} className="flex items-start gap-2">
+                            <span className="text-[var(--accent-primary)] mt-1 text-xs">→</span>
+                            <span className="text-sm text-[var(--text-tertiary)] leading-relaxed">
+                              {contribution}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Impact */}
+                      <div className="mb-4 p-3 bg-[var(--bg-tertiary)]/50 border border-[var(--border-subtle)] rounded">
+                        <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] mb-1 font-medium">
+                          Impact
+                        </p>
+                        <p className="text-sm text-[var(--text-secondary)]">
+                          {exp.impact}
+                        </p>
+                      </div>
+
+                      {/* Tech */}
+                      <div className="flex flex-wrap gap-1.5">
+                        {exp.tech.map((tech, tidx) => (
+                          <span
+                            key={tidx}
+                            className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
