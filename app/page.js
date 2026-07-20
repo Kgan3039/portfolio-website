@@ -1,28 +1,26 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
-import { Github, Linkedin, Mail, ExternalLink, Menu, X, ArrowRight, Code, Database, Brain, FileText } from 'lucide-react'
+import { motion, useReducedMotion } from 'framer-motion'
+import { Github, Linkedin, FileText, Menu, X } from 'lucide-react'
 
 export default function Portfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
+  const [activeSection, setActiveSection] = useState('projects')
+  const shouldReduceMotion = useReducedMotion()
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
+      setScrolled(window.scrollY > 20)
       
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'projects', 'experience', 'skills', 'contact']
+      const sections = ['projects', 'experience', 'about', 'contact']
       const current = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
           const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
+          return rect.top <= 150 && rect.bottom >= 150
         }
         return false
       })
@@ -36,556 +34,236 @@ export default function Portfolio() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const offset = 80
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
       setIsMenuOpen(false)
     }
   }
 
-  // Personal Information
-  const personalInfo = {
-    name: "Kartik Gangwar",
-    tagline: "CS + Data Science @ UW–Madison · Software Engineer · ML Enthusiast",
-    bio: "I'm a Computer Science and Data Science student at the University of Wisconsin–Madison, focused on building scalable software and AI-driven systems.\n\nI've worked on full-stack features at FiPet, including backend services with Firebase and frontend implementations for application features. I've also developed real-time mobile applications and built machine learning models for stock sentiment analysis, with a focus on practical, real-world applications.\n\nI enjoy solving complex problems through full-stack development, cloud infrastructure, and data-driven approaches, and I'm always looking for opportunities to build impactful, production-ready systems.\n\nI'm currently seeking software engineering and AI/ML internship opportunities.",
-    email: "kgangwar@wisc.edu",
-    github: "https://github.com/Kgan3039",
-    linkedin: "https://www.linkedin.com/in/kartik-gangwar",
-    resume: "/2026GangwarKartikResume.pdf"
-  }
-
-  const projects = [
-    {
-      title: "FiPet",
-      description: "Developing FiPet, a React Native financial literacy platform using TypeScript, Firebase, Firestore, and Cloud Functions. Built backend integrations, authentication workflows, real-time data systems, and gamification features supporting live user progression and scalable mobile interactions.",
-      tech: ["React Native", "TypeScript", "Firebase", "Firestore", "Cloud Functions", "Git/GitHub"],
-      github: null,
-      demo: "https://www.fipet.dev",
-      appStore: "https://apps.apple.com/us/app/fipet/id6751675558"
-    },
-    {
-      title: "AI Market Sentiment Dashboard",
-      description: "Built a full-stack AI market sentiment dashboard using FastAPI, React/Vite, Python, and FinBERT-based NLP pipelines for real-time stock analysis. Developed backend APIs, market data ingestion workflows, ML prediction integrations, and frontend visualization systems across a multi-member engineering team.",
-      tech: ["Python", "FastAPI", "React", "Vite", "NLP", "FinBERT", "REST APIs", "Machine Learning"],
-      github: "https://github.com/Kgan3039/ai-market-sentiment-dashboard",
-      demo: null
-    },
-    {
-      title: "TrueNeed",
-      description: "Built a real-time mutual aid mobile platform using React Native and Firebase during a hackathon event with 80+ participants and 8 judges. Designed Firestore-backed matching systems, authentication workflows, and real-time database synchronization for scalable resource distribution and live user interactions.",
-      tech: ["React Native", "Firebase", "Firestore", "TypeScript", "Real-time Database"],
-      github: "https://github.com/Kgan3039/TrueNeed",
-      demo: null
-    },
-    {
-      title: "Stock Sentiment ML Model",
-      description: "Developed an NLP-based machine learning pipeline for financial sentiment classification using Python, scikit-learn, and social/news datasets. Built preprocessing, feature engineering, and model evaluation workflows for large-scale text analysis and stock sentiment prediction.",
-      tech: ["Python", "NLP", "Machine Learning", "scikit-learn", "Pandas"],
-      github: "https://github.com/Kgan3039/stock-prediction-bert",
-      demo: null
-    }
+  const navLinks = [
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'about', label: 'About' },
+    { id: 'contact', label: 'Contact' },
   ]
 
-  const experiences = [
-    {
-      title: "Software Engineer Project Manager",
-      company: "AI@UW (University of Wisconsin–Madison)",
-      period: "March 2026 – Present",
-      description: "Built and coordinated development of a full-stack AI market sentiment dashboard across a 5-member engineering team using FastAPI, React/Vite, Python, and FinBERT-based NLP analysis. Developed backend/frontend API contracts supporting real-time financial headlines, market data ingestion, ML prediction outputs, and dashboard visualization systems. Also worked on debugging ML service integrations, validating backend workflows, and improving deployment reliability for live demo environments.",
-      tech: ["FastAPI", "React/Vite", "Python", "FinBERT", "NLP", "REST APIs"]
-    },
-    {
-      title: "Lead Software Engineer (CTO)",
-      company: "FiPet",
-      period: "October 2025 – Present",
-      description: "Leading technical development for FiPet, a gamified financial literacy platform with 300+ downloads built using React Native, TypeScript, Firebase, Firestore, and Cloud Functions. Designed backend APIs, authentication systems, and real-time gamification workflows while coordinating feature integration and sprint planning across a 20-person cross-functional development team. Focused heavily on scalable mobile architecture, live content systems, and real-time user progression features.",
-      tech: ["React Native", "TypeScript", "Firebase", "Firestore", "Cloud Functions"]
-    },
-    {
-      title: "Technology Strategy Intern",
-      company: "iStart Valley",
-      period: "June 2023 – September 2023",
-      description: "Worked in a selective innovation and entrepreneurship internship program focused on AI-driven startup development. Developed technical prototypes and implementation plans for a VR-based mental health platform, including headset interaction workflows and immersive therapeutic environments. Applied lean startup principles, product-market fit analysis, and technical research to evaluate user experience systems and business viability.",
-      tech: ["VR", "AI Solutions", "Product Strategy", "UX Systems"]
-    },
-    {
-      title: "Software Engineering Instructor",
-      company: "STEMShala Enrichment Center",
-      period: "June 2023 – August 2025",
-      description: "Taught Python, JavaScript, and robotics concepts to 40+ students through hands-on programming projects and autonomous robotics challenges. Designed technical lesson plans and engineering exercises focused on problem-solving, software development fundamentals, sensor integration, and robotics system design.",
-      tech: ["Python", "JavaScript", "Robotics", "Education"]
-    }
-  ]
-
-  const skills = {
-    "Languages": ["Java", "Python", "TypeScript", "JavaScript", "HTML/CSS"],
-    "Frameworks & Libraries": ["React", "React Native", "Next.js", "Node.js", "Firebase", "Scikit-learn", "Pandas", "NumPy", "TensorFlow"],
-    "Tools & Technologies": ["Git", "GitHub", "Firebase", "Firebase Cloud Functions", "Firestore", "REST APIs", "SQL", "VS Code", "Linux"],
-    "Data Science & AI": ["Machine Learning", "Natural Language Processing", "Data Analysis", "Sentiment Analysis", "Statistical Modeling"]
+  // Animation variants
+  const fadeInUp = shouldReduceMotion ? {} : {
+    initial: { opacity: 0, y: 16 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.4, ease: [0, 0, 0.2, 1] }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100 relative">
-      {/* Background pattern overlay */}
-      <div className="fixed inset-0 opacity-[0.015] pointer-events-none" style={{
-        backgroundImage: `radial-gradient(circle at 2px 2px, rgb(148, 163, 184) 1px, transparent 0)`,
-        backgroundSize: '48px 48px'
-      }}></div>
-      
-      {/* Gradient orbs */}
-      <div className="fixed top-20 right-20 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="fixed bottom-20 left-20 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div className="min-h-screen">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-slate-950/95 backdrop-blur-md border-b border-slate-800/50 shadow-lg shadow-black/20' : 'bg-transparent'
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        scrolled ? 'bg-[var(--bg-primary)]/95 backdrop-blur-md border-b border-[var(--border-subtle)]' : 'bg-transparent'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="section-container">
           <div className="flex items-center justify-between h-16">
-            <button 
-              onClick={() => scrollToSection('home')}
-              className="text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-400 hover:to-pink-400 transition-all duration-300 relative group"
+            {/* Logo/Name */}
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-[var(--text-primary)] font-medium text-lg hover:text-[var(--accent-primary)] transition-colors duration-150"
             >
-              {personalInfo.name.split(' ')[0]}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+              Kartik Gangwar
             </button>
-            
+
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-1">
-              {['home', 'about', 'projects', 'experience', 'skills', 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`px-4 py-2 rounded-lg capitalize transition-all duration-300 relative group ${
-                    activeSection === item 
-                      ? 'bg-slate-800 text-blue-400' 
-                      : 'text-slate-300 hover:text-blue-400 hover:bg-slate-800/50'
-                  }`}
-                >
-                  {item}
-                  {activeSection === item && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></span>
-                  )}
-                </button>
-              ))}
+            <div className="hidden md:flex items-center gap-8">
+              <div className="flex items-center gap-1">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)}
+                    className={`relative px-3 py-2 text-sm transition-colors duration-150 ${
+                      activeSection === link.id
+                        ? 'text-[var(--text-primary)]'
+                        : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                    }`}
+                  >
+                    {link.label}
+                    {activeSection === link.id && (
+                      <motion.div
+                        layoutId="activeSection"
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-[var(--accent-primary)]"
+                        transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
+              
+              <a
+                href="/2026GangwarKartikResume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary text-sm"
+              >
+                Resume
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-slate-800 transition-colors relative group"
+              className="md:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             >
-              {isMenuOpen ? <X size={24} className="text-blue-400" /> : <Menu size={24} className="group-hover:text-blue-400 transition-colors" />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-slate-950/98 backdrop-blur-md border-b border-slate-800/50 animate-fade-in">
-            <div className="px-4 py-4 space-y-2">
-              {['home', 'about', 'projects', 'experience', 'skills', 'contact'].map((item) => (
+          <motion.div
+            initial={shouldReduceMotion ? {} : { opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+            className="md:hidden bg-[var(--bg-secondary)] border-b border-[var(--border-subtle)]"
+          >
+            <div className="section-container py-4 space-y-2">
+              {navLinks.map((link) => (
                 <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className={`block w-full text-left px-4 py-3 rounded-lg capitalize transition-all duration-300 ${
-                    activeSection === item
-                      ? 'bg-slate-800 text-blue-400'
-                      : 'text-slate-300 hover:text-blue-400 hover:bg-slate-800/50'
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className={`block w-full text-left px-4 py-3 rounded-md transition-colors ${
+                    activeSection === link.id
+                      ? 'bg-[var(--bg-tertiary)] text-[var(--text-primary)]'
+                      : 'text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] hover:text-[var(--text-primary)]'
                   }`}
                 >
-                  {item}
+                  {link.label}
                 </button>
               ))}
+              <a
+                href="/2026GangwarKartikResume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary w-full mt-4"
+              >
+                Resume
+              </a>
             </div>
-          </div>
+          </motion.div>
         )}
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 relative overflow-hidden">
-        {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 animate-pulse" style={{ animationDuration: '8s' }}></div>
-        
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in relative z-10">
-          <div className="space-y-6">
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-none">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
-                {personalInfo.name}
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-slate-400 font-light tracking-wide">
-              {personalInfo.tagline}
-            </p>
-          </div>
-          
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed px-4">
-            I build full-stack applications and explore machine learning systems to solve real-world problems. 
-            From building real-time mobile apps to training ML models for predictive analysis, I enjoy turning 
-            ideas into scalable software.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-6">
-            <Button 
-              asChild
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white group shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
+      <section className="pt-32 pb-20 sm:pt-40 sm:pb-24">
+        <div className="section-container">
+          <div className="max-w-3xl">
+            {/* Name */}
+            <motion.h1
+              {...fadeInUp}
+              className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[var(--text-primary)] mb-4"
             >
-              <a href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
-                <FileText className="mr-2 h-5 w-5" />
-                View Resume
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </Button>
-            <Button 
-              asChild
-              size="lg"
-              className="bg-slate-800 border-2 border-slate-600 hover:bg-slate-700 hover:border-blue-500 text-slate-100 hover:text-blue-400 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300"
-            >
-              <a href={personalInfo.github} target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-5 w-5" />
-                GitHub
-              </a>
-            </Button>
-            <Button 
-              asChild
-              size="lg"
-              className="bg-slate-800 border-2 border-slate-600 hover:bg-slate-700 hover:border-purple-500 text-slate-100 hover:text-purple-400 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300"
-            >
-              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer">
-                <Linkedin className="mr-2 h-5 w-5" />
-                LinkedIn
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+              Kartik Gangwar
+            </motion.h1>
 
-      {/* About Section */}
-      <section id="about" className="py-32 px-4 sm:px-6 lg:px-8 relative">
-        {/* Decorative gradient line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
-        
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-12 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
-            About Me
-          </h2>
-          <div className="space-y-6">
-            {personalInfo.bio.split('\n\n').map((paragraph, index) => (
-              <p key={index} className="text-xl text-slate-300 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
+            {/* Title */}
+            <motion.p
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.1 }}
+              className="text-xl sm:text-2xl text-[var(--text-secondary)] mb-6"
+            >
+              Software Engineer building reliable software products.
+            </motion.p>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-900/30 relative">
-        {/* Decorative gradient line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
-        
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
-            Featured Projects
-          </h2>
-          <p className="text-slate-400 text-lg mb-16 max-w-2xl">Building solutions that scale and solve real problems</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card 
-                key={index} 
-                className="bg-gradient-to-br from-slate-800/60 to-slate-800/40 border-slate-700/50 hover:border-blue-500/50 transition-all duration-500 group relative overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2"
-                style={{ animationDelay: `${index * 100}ms` }}
+            {/* Description */}
+            <motion.p
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.2 }}
+              className="text-base sm:text-lg text-[var(--text-tertiary)] leading-relaxed mb-8 max-w-2xl"
+            >
+              Computer Science and Data Science at UW–Madison. I build backend systems, mobile products, data pipelines, and machine-learning applications.
+            </motion.p>
+
+            {/* Status + Links */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6"
+            >
+              {/* Currently Building Status */}
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors group"
               >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-blue-500/5 group-hover:via-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500"></div>
-                
-                {/* Corner accent */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Left border accent */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Project number badge */}
-                <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-slate-900/50 backdrop-blur-sm border border-slate-700/50 flex items-center justify-center text-slate-400 text-sm font-semibold group-hover:border-blue-500/50 group-hover:text-blue-400 transition-all duration-300">
-                  {index + 1}
-                </div>
-                
-                <CardHeader className="relative z-10 pt-16">
-                  <CardTitle className="text-2xl text-slate-100 group-hover:text-blue-400 transition-colors duration-300 flex items-center gap-2">
-                    {project.title}
-                    <ArrowRight className="h-5 w-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
-                  </CardTitle>
-                  <CardDescription className="text-slate-400 text-base leading-relaxed mt-3 max-w-2xl">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6 relative z-10">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tech.map((tech, i) => (
-                      <Badge 
-                        key={i} 
-                        variant="secondary" 
-                        className="text-xs bg-slate-700/50 text-slate-300 hover:bg-blue-600/20 hover:text-blue-400 border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 hover:scale-105 px-2.5 py-0.5"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <div className="flex gap-3 pt-2">
-                    {project.demo && project.title === "FiPet" && (
-                      <>
-                        <Button 
-                          asChild
-                          variant="outline" 
-                          size="sm"
-                          className="border-slate-600 hover:bg-purple-600/10 hover:border-purple-500/50 hover:text-purple-400 transition-all duration-300 hover:scale-105"
-                        >
-                          <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="mr-2 h-4 w-4" />
-                            fipet.dev
-                          </a>
-                        </Button>
-                        {project.appStore && (
-                          <Button 
-                            asChild
-                            variant="outline" 
-                            size="sm"
-                            className="border-slate-600 hover:bg-blue-600/10 hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300 hover:scale-105"
-                          >
-                            <a href={project.appStore} target="_blank" rel="noopener noreferrer">
-                              <ExternalLink className="mr-2 h-4 w-4" />
-                              App Store
-                            </a>
-                          </Button>
-                        )}
-                      </>
-                    )}
-                    {project.github && (
-                      <Button 
-                        asChild
-                        variant="outline" 
-                        size="sm"
-                        className="border-slate-600 hover:bg-blue-600/10 hover:border-blue-500/50 hover:text-blue-400 transition-all duration-300 hover:scale-105"
-                      >
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
-                          Code
-                        </a>
-                      </Button>
-                    )}
-                    {project.demo && project.title !== "FiPet" && (
-                      <Button 
-                        asChild
-                        variant="outline" 
-                        size="sm"
-                        className="border-slate-600 hover:bg-purple-600/10 hover:border-purple-500/50 hover:text-purple-400 transition-all duration-300 hover:scale-105"
-                      >
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Demo
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                <span className="w-2 h-2 rounded-full bg-[var(--accent-primary)] animate-pulse"></span>
+                <span>Currently building Studi for UW–Madison</span>
+              </a>
 
-      {/* Experience Section */}
-      <section id="experience" className="py-32 px-4 sm:px-6 lg:px-8 relative">
-        {/* Decorative gradient line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
-        
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
-            Experience
-          </h2>
-          <p className="text-slate-400 text-lg mb-16 max-w-2xl">Building scalable systems and shipping production software</p>
-          
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative pl-10 pb-12 border-l-2 border-slate-700/50 last:pb-0 group">
-                {/* Animated dot */}
-                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-lg shadow-blue-500/50 group-hover:shadow-xl group-hover:shadow-blue-500/70 transition-all duration-300"></div>
-                
-                {/* Glow effect on hover */}
-                <div className="absolute -left-[2px] top-[7px] w-1 h-20 bg-gradient-to-b from-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <div className="space-y-5 bg-slate-800/30 p-6 rounded-lg border border-slate-700/30 group-hover:border-blue-500/30 group-hover:bg-slate-800/50 transition-all duration-300">
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-semibold text-slate-100 group-hover:text-blue-400 transition-colors duration-300">{exp.title}</h3>
-                    <p className="text-blue-400 font-medium text-lg">{exp.company}</p>
-                    <p className="text-sm text-slate-500">{exp.period}</p>
-                  </div>
-                  <p className="text-slate-300 leading-relaxed text-base max-w-3xl">{exp.description}</p>
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {exp.tech.map((tech, i) => (
-                      <Badge 
-                        key={i} 
-                        variant="outline" 
-                        className="text-xs border-slate-600/50 text-slate-400 hover:border-blue-500/50 hover:text-blue-400 transition-colors duration-300 px-2.5 py-0.5"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
+              {/* Divider */}
+              <div className="hidden sm:block w-px h-4 bg-[var(--border-subtle)]"></div>
+
+              {/* Links */}
+              <div className="flex items-center gap-4">
+                <a
+                  href="/2026GangwarKartikResume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                >
+                  <FileText size={16} />
+                  <span>Resume</span>
+                </a>
+                <a
+                  href="https://github.com/Kgan3039"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                >
+                  <Github size={16} />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/kartik-gangwar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                >
+                  <Linkedin size={16} />
+                  <span>LinkedIn</span>
+                </a>
               </div>
-            ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-32 px-4 sm:px-6 lg:px-8 bg-slate-900/30 relative">
-        {/* Decorative gradient line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
-        
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
-            Skills & Technologies
-          </h2>
-          <p className="text-slate-400 text-lg mb-16 max-w-2xl">Tools I use to bring ideas to life</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {Object.entries(skills).map(([category, items], index) => (
-              <Card 
-                key={index}
-                className="bg-gradient-to-br from-slate-800/60 to-slate-800/40 border-slate-700/50 hover:border-purple-500/50 transition-all duration-500 group relative overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl hover:shadow-purple-500/10"
-              >
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-all duration-500"></div>
-                
-                <CardHeader className="relative z-10">
-                  <CardTitle className="text-xl text-slate-100 flex items-center gap-3 group-hover:text-purple-400 transition-colors duration-300">
-                    {category === "Languages" && <Code className="h-6 w-6 text-blue-400" />}
-                    {category === "Data Science & AI" && <Brain className="h-6 w-6 text-purple-400" />}
-                    {category === "Tools & Technologies" && <Database className="h-6 w-6 text-green-400" />}
-                    {category === "Frameworks & Libraries" && <Code className="h-6 w-6 text-pink-400" />}
-                    {category}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="relative z-10">
-                  <div className="flex flex-wrap gap-2">
-                    {items.map((skill, i) => (
-                      <Badge 
-                        key={i}
-                        variant="secondary"
-                        className="bg-slate-700/50 text-slate-300 hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20 hover:text-blue-400 border border-slate-600/50 hover:border-blue-500/50 transition-all duration-300 cursor-default"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      {/* Placeholder sections for testing scroll behavior */}
+      <section id="projects" className="py-20 section-container">
+        <div className="h-96 flex items-center justify-center border border-[var(--border-subtle)] rounded-lg">
+          <p className="text-[var(--text-tertiary)]">Projects Section (To be implemented in Stage 3)</p>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-32 px-4 sm:px-6 lg:px-8 relative">
-        {/* Decorative gradient line */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
-        
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
-            Get In Touch
-          </h2>
-          <p className="text-xl text-slate-300 leading-relaxed px-4">
-            I'm currently open to software engineering and AI/ML opportunities. If you have any positions available 
-            or just want to connect, feel free to reach out!
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-            <Button 
-              asChild
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white w-full sm:w-auto shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-300"
-            >
-              <a href={`mailto:${personalInfo.email}`}>
-                <Mail className="mr-2 h-5 w-5" />
-                Email Me
-              </a>
-            </Button>
-            <Button 
-              asChild
-              size="lg"
-              className="bg-slate-800 border-2 border-slate-600 hover:bg-slate-700 hover:border-purple-500 text-slate-100 hover:text-purple-400 w-full sm:w-auto shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300"
-            >
-              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer">
-                <Linkedin className="mr-2 h-5 w-5" />
-                Connect on LinkedIn
-              </a>
-            </Button>
-          </div>
+      <section id="experience" className="py-20 section-container">
+        <div className="h-96 flex items-center justify-center border border-[var(--border-subtle)] rounded-lg">
+          <p className="text-[var(--text-tertiary)]">Experience Section (To be implemented in Stage 4)</p>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative py-12 px-4 sm:px-6 lg:px-8 border-t border-slate-800/50 bg-gradient-to-b from-slate-950 to-slate-900/50">
-        {/* Decorative gradient */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-        
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col items-center gap-8">
-            {/* Logo/Name */}
-            <div className="text-center space-y-2">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                {personalInfo.name}
-              </h3>
-              <p className="text-slate-400 text-sm">Building the future, one line of code at a time</p>
-            </div>
-            
-            {/* Social Links */}
-            <div className="flex items-center gap-6">
-              <a 
-                href={personalInfo.github} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-blue-500/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative p-3 rounded-full bg-slate-800/50 border border-slate-700/50 group-hover:border-blue-500/50 group-hover:bg-slate-800 transition-all duration-300">
-                  <Github className="h-5 w-5 text-slate-400 group-hover:text-blue-400 transition-colors" />
-                </div>
-              </a>
-              <a 
-                href={personalInfo.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-blue-500/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative p-3 rounded-full bg-slate-800/50 border border-slate-700/50 group-hover:border-blue-500/50 group-hover:bg-slate-800 transition-all duration-300">
-                  <Linkedin className="h-5 w-5 text-slate-400 group-hover:text-blue-400 transition-colors" />
-                </div>
-              </a>
-              <a 
-                href={`mailto:${personalInfo.email}`}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-purple-500/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative p-3 rounded-full bg-slate-800/50 border border-slate-700/50 group-hover:border-purple-500/50 group-hover:bg-slate-800 transition-all duration-300">
-                  <Mail className="h-5 w-5 text-slate-400 group-hover:text-purple-400 transition-colors" />
-                </div>
-              </a>
-            </div>
-            
-            {/* Copyright */}
-            <div className="text-center space-y-2">
-              <p className="text-slate-500 text-sm">
-                © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
-              </p>
-              <p className="text-slate-600 text-xs">
-                Designed & Built with Next.js, React, and Tailwind CSS
-              </p>
-            </div>
-          </div>
+      <section id="about" className="py-20 section-container">
+        <div className="h-96 flex items-center justify-center border border-[var(--border-subtle)] rounded-lg">
+          <p className="text-[var(--text-tertiary)]">About Section (To be implemented in Stage 5)</p>
         </div>
-      </footer>
+      </section>
+
+      <section id="contact" className="py-20 section-container">
+        <div className="h-96 flex items-center justify-center border border-[var(--border-subtle)] rounded-lg">
+          <p className="text-[var(--text-tertiary)]">Contact Section (To be implemented in Stage 5)</p>
+        </div>
+      </section>
     </div>
   )
 }
