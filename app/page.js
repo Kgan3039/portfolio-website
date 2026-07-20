@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useReducedMotion, useScroll, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, FileText, Menu, X, ArrowUpRight, ExternalLink, Brain, Cpu, Activity } from 'lucide-react'
+import { Github, Linkedin, FileText, Menu, X, ArrowUpRight, ExternalLink, Cpu, Activity } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Portfolio() {
@@ -19,18 +19,43 @@ export default function Portfolio() {
       setScrolled(window.scrollY > 20)
       
       const sections = ['projects', 'experience', 'about', 'contact']
-      const current = sections.find(section => {
+      
+      // Find which section we're currently in based on scroll position
+      let current = sections[0]
+      let bestMatch = -1
+      
+      sections.forEach((section, index) => {
         const element = document.getElementById(section)
         if (element) {
           const rect = element.getBoundingClientRect()
-          return rect.top <= 150 && rect.bottom >= 150
+          const viewportHeight = window.innerHeight
+          
+          // A section is "active" if its top is above the middle of viewport
+          // and its bottom is below the top quarter of viewport
+          if (rect.top < viewportHeight / 2 && rect.bottom > viewportHeight / 4) {
+            // Prefer the section that is higher in the document order
+            // This prevents jumping backwards when scrolling through adjacent sections
+            if (index > bestMatch) {
+              bestMatch = index
+              current = section
+            }
+          }
         }
-        return false
       })
-      if (current) setActiveSection(current)
+      
+      // Special handling for bottom of page - activate Contact when near end
+      const scrollPosition = window.scrollY + window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+      
+      if (scrollPosition >= documentHeight - 50) {
+        current = 'contact'
+      }
+      
+      setActiveSection(current)
     }
 
     window.addEventListener('scroll', handleScroll)
+    handleScroll() // Call once on mount
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -395,18 +420,21 @@ export default function Portfolio() {
                   <motion.div
                     whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
                     onClick={() => setLightboxImage('/project-images/studi-mobile.png')}
-                    className="relative w-full max-w-xs aspect-[9/19] bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-[2.5rem] p-3 shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
+                    className="relative w-full max-w-xs aspect-[9/19] bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-[2.5rem] shadow-lg cursor-pointer hover:shadow-xl transition-shadow overflow-hidden"
                   >
-                    <div className="w-full h-full bg-[var(--bg-primary)] rounded-[2rem] border border-[var(--border-subtle)] overflow-hidden">
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[var(--bg-primary)] rounded-b-2xl z-10"></div>
+                    
+                    {/* Screen with Screenshot */}
+                    <div className="absolute inset-3 bg-[var(--bg-primary)] rounded-[2rem] overflow-hidden">
                       <Image
                         src="/project-images/studi-mobile.png"
                         alt="Studi mobile app showing Good evening Kartik, upcoming study sessions, and class schedule"
                         width={375}
                         height={812}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[var(--bg-primary)] rounded-b-2xl z-10"></div>
                   </motion.div>
                 </div>
               </div>
@@ -542,61 +570,45 @@ export default function Portfolio() {
                 </div>
               </motion.div>
 
-              {/* CNN Image Recognition - Typography/Icon Focused */}
+              {/* CNN Image Recognition - Typography Only */}
               <motion.div
                 variants={itemVariants}
                 className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px] md:col-span-2"
               >
-                <div className="grid md:grid-cols-[1fr,auto] gap-8">
-                  <div>
-                    <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors">
-                      CNN Image Recognition for Medical Imaging
-                    </h3>
-                    <p className="text-xs text-[var(--text-tertiary)] font-medium mb-4">
-                      Research project
-                    </p>
+                <div>
+                  <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors">
+                    CNN Image Recognition for Medical Imaging
+                  </h3>
+                  <p className="text-xs text-[var(--text-tertiary)] font-medium mb-4">
+                    Research project
+                  </p>
 
-                    <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed max-w-2xl">
-                      Convolutional neural network for medical image classification using transfer learning and data augmentation.
-                    </p>
+                  <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed max-w-2xl">
+                    Convolutional neural network for medical image classification using transfer learning and data augmentation.
+                  </p>
 
-                    <div className="space-y-1.5 mb-4">
-                      {[
-                        'Transfer learning from pre-trained models',
-                        'Data preprocessing with augmentation',
-                        'Cross-validation and performance metrics'
-                      ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-sm">
-                          <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
-                          <span className="text-[var(--text-tertiary)]">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5">
-                      {['Python', 'TensorFlow', 'Keras', 'OpenCV', 'NumPy'].map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="space-y-1.5 mb-4">
+                    {[
+                      'Transfer learning from pre-trained models',
+                      'Data preprocessing with augmentation',
+                      'Cross-validation and performance metrics'
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm">
+                        <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
+                        <span className="text-[var(--text-tertiary)]">{item}</span>
+                      </div>
+                    ))}
                   </div>
 
-                  {/* Icon Visual */}
-                  <div className="hidden md:flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-4 p-8">
-                      <div className="relative">
-                        <Brain size={48} className="text-[var(--accent-primary)]/30" />
-                        <Cpu size={32} className="absolute -bottom-2 -right-2 text-[var(--accent-primary)]/50" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Activity size={20} className="text-[var(--accent-primary)]/40" />
-                        <span className="text-xs uppercase tracking-wider text-[var(--text-tertiary)] font-medium">CNN</span>
-                      </div>
-                    </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {['Python', 'TensorFlow', 'PyTorch', 'NumPy'].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>
@@ -636,12 +648,12 @@ export default function Portfolio() {
                     role: 'Software Engineering Project Manager',
                     time: 'March 2026 – Present',
                     contributions: [
-                      'Built full-stack AI market sentiment dashboard across 5-member team using FastAPI, React/Vite, and FinBERT',
-                      'Developed backend/frontend API contracts for real-time financial data and ML predictions',
-                      'Coordinated deployment reliability and ML service integration debugging'
+                      'Coordinated 20+ club members to demo full-stack AI market sentiment dashboard using FinBERT, FastAPI, and React',
+                      'Built backend REST APIs for financial data pipelines with validation and testing infrastructure',
+                      'Reduced ML service latency through debugging and optimization of Python prediction endpoints'
                     ],
-                    impact: 'Shipped working MVP with end-to-end AI pipeline',
-                    tech: ['FastAPI', 'React/Vite', 'Python', 'FinBERT']
+                    impact: 'Shipped production-grade AI pipeline with real-time sentiment analysis',
+                    tech: ['FastAPI', 'React', 'Python', 'FinBERT']
                   },
                   {
                     company: 'FiPet',
@@ -649,10 +661,10 @@ export default function Portfolio() {
                     time: 'October 2025 – Present',
                     contributions: [
                       'Leading technical development for gamified financial literacy platform (300+ downloads)',
-                      'Designed backend APIs, authentication systems, and real-time gamification workflows',
-                      'Coordinated feature integration across 20-person cross-functional team'
+                      'Reduced authentication sync defects by 35% through improved testing and error handling',
+                      'Coordinated feature integration and code reviews across 25+ person engineering team'
                     ],
-                    impact: 'Built scalable mobile architecture with live content systems',
+                    impact: 'Built scalable Firebase backend with real-time gamification systems',
                     tech: ['React Native', 'TypeScript', 'Firebase', 'Firestore']
                   },
                   {
@@ -766,15 +778,15 @@ export default function Portfolio() {
 
             <motion.div variants={itemVariants} className="max-w-3xl">
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
-                I'm a Computer Science and Data Science student at UW–Madison focused on backend systems, mobile applications, and data pipelines. I build products that turn complex workflows into reliable, maintainable systems.
+                I'm a Computer Science and Data Science student at UW–Madison who builds scalable backend systems, mobile applications, and machine learning pipelines. I take products from concept to deployment, focusing on scalable architecture and reliable software.
               </p>
               
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
-                My work spans real-time data synchronization, class-based matching algorithms, sentiment analysis pipelines, and mobile-first architectures. I care about system design, clean abstractions, and delivering features that users can trust.
+                My work includes real-time data sync systems, RESTful API design, Firebase-backed mobile platforms, and ML-driven sentiment analysis. I've shipped features to 300+ users, reduced defects by 35% through better testing infrastructure, and built systems that handle live interactions at scale.
               </p>
 
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed">
-                Currently building Studi — a study coordination platform for UW–Madison students that solves session discovery and peer matching at scale.
+                Currently engineering Studi — a class-based study coordination platform for UW–Madison that matches students with sessions through enrollment data and preference algorithms.
               </p>
             </motion.div>
           </motion.div>
@@ -806,7 +818,7 @@ export default function Portfolio() {
                   Languages
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Python', 'TypeScript', 'JavaScript', 'Java', 'SQL', 'C++'].map((skill) => (
+                  {['Python', 'Java', 'JavaScript', 'TypeScript', 'SQL'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -817,13 +829,13 @@ export default function Portfolio() {
                 </div>
               </motion.div>
 
-              {/* Backend & Data */}
+              {/* Frameworks & Technologies */}
               <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
                 <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
-                  Backend & Data
+                  Frameworks & Technologies
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['FastAPI', 'Node.js', 'Firebase', 'PostgreSQL', 'MongoDB', 'Firestore', 'Redis'].map((skill) => (
+                  {['React', 'React Native', 'FastAPI', 'Firebase', 'Firestore', 'Node.js'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -834,13 +846,13 @@ export default function Portfolio() {
                 </div>
               </motion.div>
 
-              {/* Frontend & Mobile */}
+              {/* Backend & Tools */}
               <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
                 <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
-                  Frontend & Mobile
+                  Backend & Tools
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['React Native', 'React', 'Next.js', 'Tailwind CSS', 'Framer Motion'].map((skill) => (
+                  {['Git', 'GitHub', 'Linux', 'VS Code', 'Jupyter Notebook'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -851,30 +863,13 @@ export default function Portfolio() {
                 </div>
               </motion.div>
 
-              {/* ML & AI */}
-              <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
+              {/* ML / AI */}
+              <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg md:col-span-2 lg:col-span-3">
                 <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
-                  ML & AI
+                  ML / AI
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['TensorFlow', 'Keras', 'PyTorch', 'scikit-learn', 'Pandas', 'NumPy', 'FinBERT'].map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Tools & Platforms */}
-              <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg md:col-span-2">
-                <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
-                  Tools & Platforms
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {['Git', 'Docker', 'AWS', 'Vercel', 'PostHog', 'Jupyter', 'VS Code', 'Linux'].map((skill) => (
+                  {['TensorFlow', 'PyTorch', 'scikit-learn', 'NumPy', 'Pandas', 'FinBERT'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
