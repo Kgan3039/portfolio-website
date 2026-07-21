@@ -21,8 +21,22 @@ export default function Portfolio() {
       const sections = ['projects', 'experience', 'about', 'contact']
       const navOffset = 100 // Navbar height + some padding
       
-      // Determine active section based on which section's top has passed the navOffset
-      // This ensures smooth, predictable behavior without backward jumps
+      // Get contact element position for later checks
+      const contactElement = document.getElementById('contact')
+      const contactTop = contactElement ? contactElement.offsetTop : Infinity
+      
+      // CRITICAL: Check if user is at/near the bottom of the page first
+      // This ensures Contact becomes active when reaching the end
+      const nearBottom = 
+        window.innerHeight + window.scrollY >= 
+        document.documentElement.scrollHeight - 80
+      
+      if (nearBottom) {
+        setActiveSection('contact')
+        return
+      }
+      
+      // Normal section-boundary logic for all other cases
       let current = sections[0]
       
       // Get positions of all sections
@@ -38,28 +52,33 @@ export default function Portfolio() {
         return null
       }).filter(Boolean)
       
-      // Get contact section specifically to handle About + Technical Profile grouping
-      const contactElement = document.getElementById('contact')
-      const contactTop = contactElement ? contactElement.offsetTop : Infinity
-      
       const scrollPos = window.scrollY + navOffset
       
-      // Find the section whose range includes the current scroll position
-      for (let i = sectionPositions.length - 1; i >= 0; i--) {
-        const section = sectionPositions[i]
-        
-        // Special handling: About section extends until Contact begins
-        // This covers both About and Technical Profile sections
-        if (section.id === 'about') {
-          if (scrollPos >= section.top && scrollPos < contactTop) {
-            current = 'about'
-            break
-          }
-        } else {
-          // For other sections, check if scroll position is past their top
-          if (scrollPos >= section.top) {
-            current = section.id
-            break
+      // Check if we've scrolled well into Contact section
+      // Use a higher threshold for Contact to avoid premature activation
+      if (scrollPos >= contactTop + 150) {
+        current = 'contact'
+      } else {
+        // Find the section whose range includes the current scroll position
+        for (let i = sectionPositions.length - 1; i >= 0; i--) {
+          const section = sectionPositions[i]
+          
+          // Skip contact as it's handled above
+          if (section.id === 'contact') continue
+          
+          // Special handling: About section extends until Contact begins
+          // This covers both About and Technical Profile sections
+          if (section.id === 'about') {
+            if (scrollPos >= section.top && scrollPos < contactTop + 150) {
+              current = 'about'
+              break
+            }
+          } else {
+            // For other sections, check if scroll position is past their top
+            if (scrollPos >= section.top) {
+              current = section.id
+              break
+            }
           }
         }
       }
