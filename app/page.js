@@ -218,24 +218,29 @@ export default function Portfolio() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setLightboxImage(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-pointer"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-8 cursor-pointer"
           >
             <motion.div
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              className="relative max-w-6xl w-full"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-full max-h-full flex items-center justify-center"
             >
               <Image
                 src={lightboxImage}
                 alt="Project preview"
                 width={1920}
                 height={1080}
-                className="w-full h-auto rounded-lg"
+                className="max-w-full max-h-[85vh] w-auto h-auto object-contain rounded-lg"
+                style={{ objectFit: 'contain' }}
               />
               <button
-                onClick={() => setLightboxImage(null)}
-                className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setLightboxImage(null)
+                }}
+                className="absolute top-4 right-4 p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors z-10"
               >
                 <X size={24} />
               </button>
