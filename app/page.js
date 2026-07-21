@@ -197,7 +197,7 @@ export default function Portfolio() {
 
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
-        scrolled ? 'bg-[var(--bg-primary)]/95 backdrop-blur-md border-b border-[var(--border-subtle)]' : 'bg-transparent'
+        scrolled ? 'bg-[#0a0a0a]/98 backdrop-blur-lg border-b border-[var(--border-subtle)]' : 'bg-transparent'
       }`}>
         <div className="section-container">
           <div className="flex items-center justify-between h-16">
@@ -581,7 +581,8 @@ export default function Portfolio() {
                   {[
                     'Shipped complete platform in 24 hours',
                     'Real-time matching and database sync',
-                    'Authentication and live interactions'
+                    'Authentication and live interactions',
+                    'Firestore queries with geolocation filtering'
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm">
                       <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
@@ -650,7 +651,7 @@ export default function Portfolio() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 sm:py-24 bg-[var(--bg-secondary)]/30">
+      <section id="experience" className="py-16 sm:py-18 bg-[var(--bg-secondary)]/30">
         <div className="section-container">
           <motion.div
             initial="hidden"
@@ -684,7 +685,7 @@ export default function Portfolio() {
                       'Built backend REST APIs for financial data pipelines with validation and testing infrastructure',
                       'Reduced ML service latency through debugging and optimization of Python prediction endpoints'
                     ],
-                    impact: 'Shipped production-grade AI pipeline with real-time sentiment analysis',
+                    impact: 'Built an end-to-end AI market sentiment platform with real-time sentiment analysis',
                     tech: ['FastAPI', 'React', 'Python', 'FinBERT']
                   },
                   {
@@ -814,7 +815,7 @@ export default function Portfolio() {
               </p>
               
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
-                My work includes real-time data sync systems, RESTful API design, Firebase-backed mobile platforms, and ML-driven sentiment analysis. I've shipped features to 300+ users, reduced defects by 35% through better testing infrastructure, and built systems that handle live interactions at scale.
+                My work includes real-time data sync systems, RESTful API design, Firebase-backed mobile platforms, and ML-driven sentiment analysis. I've shipped features used across a platform with 300+ downloads, reduced data-sync defects by 35% through stronger validation and testing, and built systems supporting real-time interactions.
               </p>
 
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed">
