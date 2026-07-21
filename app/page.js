@@ -153,6 +153,55 @@ export default function Portfolio() {
     }
   }
 
+  // Enhanced animation variants for polish pass
+  const heroStaggerVariants = shouldReduceMotion ? {} : {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  }
+
+  const heroItemVariants = shouldReduceMotion ? {} : {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: [0, 0, 0.2, 1] }
+    }
+  }
+
+  const sectionHeaderVariants = shouldReduceMotion ? {} : {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: [0, 0, 0.2, 1] }
+    }
+  }
+
+  const timelineVariants = shouldReduceMotion ? {} : {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  }
+
+  const timelineItemVariants = shouldReduceMotion ? {} : {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4, ease: [0, 0, 0.2, 1] }
+    }
+  }
+
+
   return (
     <div className="min-h-screen">
       {/* Scroll Progress Indicator */}
@@ -289,41 +338,42 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 sm:pt-40 sm:pb-20">
         <div className="section-container">
-          <div className="max-w-3xl">
+          <motion.div 
+            className="max-w-3xl"
+            initial="hidden"
+            animate="visible"
+            variants={heroStaggerVariants}
+          >
             <motion.h1
-              {...fadeInUp}
+              variants={heroItemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[var(--text-primary)] mb-4"
             >
               Kartik Gangwar
             </motion.h1>
 
             <motion.p
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.1 }}
+              variants={heroItemVariants}
               className="text-xl sm:text-2xl text-[var(--text-secondary)] mb-6"
             >
               I build systems that turn complex workflows into reliable products.
             </motion.p>
 
             <motion.p
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.2 }}
+              variants={heroItemVariants}
               className="text-base sm:text-lg text-[var(--text-tertiary)] leading-relaxed mb-8 max-w-2xl"
             >
               Computer Science and Data Science at UW–Madison. I work on backend systems, mobile products, data pipelines, and machine-learning applications.
             </motion.p>
 
             <motion.div
-              {...fadeInUp}
-              transition={{ ...fadeInUp.transition, delay: 0.3 }}
+              variants={heroItemVariants}
               className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
             >
               <a
-                href="#studi"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById('studi')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-                }}
+                href="https://joinstudi.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Studi website - study coordination platform for UW-Madison students"
                 className="group inline-flex items-center gap-3 px-4 py-2.5 bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-md hover:border-[var(--accent-primary)] hover:bg-[var(--bg-elevated)] transition-all duration-200"
               >
                 <span className="flex items-center gap-2">
@@ -366,7 +416,7 @@ export default function Portfolio() {
                 </a>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -401,13 +451,27 @@ export default function Portfolio() {
 
               <div className="grid lg:grid-cols-[1.2fr,1fr] gap-8">
                 <div>
-                  <h3 className="text-2xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-primary)] transition-colors">
-                    Studi
-                  </h3>
-                  
-                  <p className="text-[var(--text-secondary)] text-sm font-medium mb-3">
-                    Study coordination for UW–Madison students
-                  </p>
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <div>
+                      <h3 className="text-2xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-primary)] transition-colors">
+                        Studi
+                      </h3>
+                      
+                      <p className="text-[var(--text-secondary)] text-sm font-medium">
+                        Study coordination for UW–Madison students
+                      </p>
+                    </div>
+                    <a
+                      href="https://joinstudi.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visit Studi website"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[var(--accent-primary)] hover:text-[var(--accent-hover)] bg-[var(--accent-primary)]/10 hover:bg-[var(--accent-primary)]/20 border border-[var(--accent-primary)]/20 rounded-md transition-all duration-200"
+                    >
+                      <span>Visit Website</span>
+                      <ExternalLink size={12} />
+                    </a>
+                  </div>
                   
                   <p className="text-[var(--text-tertiary)] text-sm mb-6 leading-relaxed">
                     Connects students with study sessions based on class enrollment and preferences. Solving session discovery and peer coordination at scale.
