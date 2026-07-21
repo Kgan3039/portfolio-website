@@ -627,8 +627,8 @@ export default function Portfolio() {
                     {/* Screen with Screenshot */}
                     <div className="absolute inset-3 bg-[var(--bg-primary)] rounded-[2rem] overflow-hidden">
                       <Image
-                        src="/project-images/fipet-mobile.png"
-                        alt="FiPet mobile app showing gamified financial literacy with pet progression and learning quests"
+                        src="/project-images/fipet-mobile.webp"
+                        alt="FiPet app home screen showing Level 2 orange fox pet, XP progress, daily streak tracker, and financial literacy quests"
                         width={375}
                         height={812}
                         className="w-full h-full object-cover"
