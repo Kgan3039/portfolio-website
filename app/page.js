@@ -19,36 +19,49 @@ export default function Portfolio() {
       setScrolled(window.scrollY > 20)
       
       const sections = ['projects', 'experience', 'about', 'contact']
+      const navOffset = 100 // Navbar height + some padding
       
-      // Find which section we're currently in based on scroll position
+      // Determine active section based on which section's top has passed the navOffset
+      // This ensures smooth, predictable behavior without backward jumps
       let current = sections[0]
-      let bestMatch = -1
       
-      sections.forEach((section, index) => {
-        const element = document.getElementById(section)
+      // Get positions of all sections
+      const sectionPositions = sections.map(sectionId => {
+        const element = document.getElementById(sectionId)
         if (element) {
-          const rect = element.getBoundingClientRect()
-          const viewportHeight = window.innerHeight
-          
-          // A section is "active" if its top is above the middle of viewport
-          // and its bottom is below the top quarter of viewport
-          if (rect.top < viewportHeight / 2 && rect.bottom > viewportHeight / 4) {
-            // Prefer the section that is higher in the document order
-            // This prevents jumping backwards when scrolling through adjacent sections
-            if (index > bestMatch) {
-              bestMatch = index
-              current = section
-            }
+          return {
+            id: sectionId,
+            top: element.offsetTop,
+            bottom: element.offsetTop + element.offsetHeight
           }
         }
-      })
+        return null
+      }).filter(Boolean)
       
-      // Special handling for bottom of page - activate Contact when near end
-      const scrollPosition = window.scrollY + window.innerHeight
-      const documentHeight = document.documentElement.scrollHeight
+      // Get contact section specifically to handle About + Technical Profile grouping
+      const contactElement = document.getElementById('contact')
+      const contactTop = contactElement ? contactElement.offsetTop : Infinity
       
-      if (scrollPosition >= documentHeight - 50) {
-        current = 'contact'
+      const scrollPos = window.scrollY + navOffset
+      
+      // Find the section whose range includes the current scroll position
+      for (let i = sectionPositions.length - 1; i >= 0; i--) {
+        const section = sectionPositions[i]
+        
+        // Special handling: About section extends until Contact begins
+        // This covers both About and Technical Profile sections
+        if (section.id === 'about') {
+          if (scrollPos >= section.top && scrollPos < contactTop) {
+            current = 'about'
+            break
+          }
+        } else {
+          // For other sections, check if scroll position is past their top
+          if (scrollPos >= section.top) {
+            current = section.id
+            break
+          }
+        }
       }
       
       setActiveSection(current)
