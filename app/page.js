@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useReducedMotion, useScroll, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, FileText, Menu, X, ArrowUpRight, ExternalLink, Cpu, Activity } from 'lucide-react'
+import { Github, Linkedin, FileText, Menu, X, ArrowUpRight, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Portfolio() {
@@ -543,6 +543,52 @@ export default function Portfolio() {
 
             {/* Supporting Projects Grid */}
             <div className="grid md:grid-cols-2 gap-6">
+              {/* FiPet */}
+              <motion.div
+                variants={itemVariants}
+                className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px]"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors">
+                      FiPet
+                    </h3>
+                    <p className="text-xs text-[var(--text-tertiary)] font-medium">
+                      Live mobile product · 300+ downloads
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
+                  A gamified financial-literacy app combining learning quests, pet progression, customization, and real-time social features.
+                </p>
+
+                <div className="space-y-1.5 mb-4">
+                  {[
+                    'Designed Firestore data models and real-time synchronization workflows',
+                    'Built authentication, gamification, and data-validation services',
+                    'Reduced data-sync defects by 35% through stronger validation and testing',
+                    'Coordinated feature integration and code-review workflows across a 25+ person team'
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-sm">
+                      <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
+                      <span className="text-[var(--text-tertiary)]">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {['React Native', 'TypeScript', 'Firebase', 'Firestore'].map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
               {/* AI Market Sentiment Dashboard */}
               <motion.div
                 variants={itemVariants}
@@ -669,49 +715,6 @@ export default function Portfolio() {
                       {tech}
                     </span>
                   ))}
-                </div>
-              </motion.div>
-
-              {/* CNN Image Recognition - Typography Only */}
-              <motion.div
-                variants={itemVariants}
-                className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px] md:col-span-2"
-              >
-                <div>
-                  <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors">
-                    CNN Image Recognition for Medical Imaging
-                  </h3>
-                  <p className="text-xs text-[var(--text-tertiary)] font-medium mb-4">
-                    Research project
-                  </p>
-
-                  <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed max-w-2xl">
-                    Convolutional neural network for medical image classification using transfer learning and data augmentation.
-                  </p>
-
-                  <div className="space-y-1.5 mb-4">
-                    {[
-                      'Transfer learning from pre-trained models',
-                      'Data preprocessing with augmentation',
-                      'Cross-validation and performance metrics'
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
-                        <span className="text-[var(--text-tertiary)]">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5">
-                    {['Python', 'TensorFlow', 'PyTorch', 'NumPy'].map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </motion.div>
             </div>
