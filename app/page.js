@@ -541,55 +541,106 @@ export default function Portfolio() {
               </div>
             </motion.div>
 
-            {/* Supporting Projects Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* FiPet */}
-              <motion.div
-                variants={itemVariants}
-                className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px]"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-medium text-[var(--text-primary)] mb-1 group-hover:text-[var(--accent-primary)] transition-colors">
-                      FiPet
-                    </h3>
-                    <p className="text-xs text-[var(--text-tertiary)] font-medium">
-                      Live mobile product · 300+ downloads
-                    </p>
+            {/* FiPet - Flagship Product */}
+            <motion.div
+              variants={itemVariants}
+              className="group relative mb-8 p-8 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px]"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--accent-primary)]/10 border border-[var(--accent-primary)]/20 rounded-full text-xs font-medium text-[var(--accent-primary)] mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]"></span>
+                Live mobile product · 300+ downloads
+              </div>
+
+              <div className="grid lg:grid-cols-[1.2fr,1fr] gap-8">
+                <div>
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <div>
+                      <h3 className="text-2xl font-medium text-[var(--text-primary)] mb-2 group-hover:text-[var(--accent-primary)] transition-colors">
+                        FiPet
+                      </h3>
+                      
+                      <p className="text-[var(--text-secondary)] text-sm font-medium">
+                        A gamified financial-literacy app combining learning quests, pet progression, customization, and real-time social features.
+                      </p>
+                    </div>
+                    <div className="flex gap-2">
+                      <a
+                        href="https://fipet.dev"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit FiPet website"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[var(--accent-primary)] hover:text-[var(--accent-hover)] bg-[var(--accent-primary)]/10 hover:bg-[var(--accent-primary)]/20 border border-[var(--accent-primary)]/20 rounded-md transition-all duration-200"
+                      >
+                        <span>Visit Website</span>
+                        <ExternalLink size={12} />
+                      </a>
+                      <a
+                        href="https://apps.apple.com/us/app/fipet/id6751675558"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Download FiPet on the App Store"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[var(--accent-primary)] hover:text-[var(--accent-hover)] bg-[var(--accent-primary)]/10 hover:bg-[var(--accent-primary)]/20 border border-[var(--accent-primary)]/20 rounded-md transition-all duration-200"
+                      >
+                        <span>App Store</span>
+                        <ExternalLink size={12} />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 mb-6">
+                    <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Engineering Focus</p>
+                    {[
+                      'Designed Firestore data models and real-time synchronization workflows',
+                      'Built authentication, gamification, and data-validation services',
+                      'Reduced data-sync defects by 35% through stronger validation and testing',
+                      'Coordinated feature integration and code-review workflows across a 25+ person team'
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-sm">
+                        <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
+                        <span className="text-[var(--text-tertiary)]">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5">
+                    {['React Native', 'TypeScript', 'Firebase', 'Firestore'].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
-                  A gamified financial-literacy app combining learning quests, pet progression, customization, and real-time social features.
-                </p>
-
-                <div className="space-y-1.5 mb-4">
-                  {[
-                    'Designed Firestore data models and real-time synchronization workflows',
-                    'Built authentication, gamification, and data-validation services',
-                    'Reduced data-sync defects by 35% through stronger validation and testing',
-                    'Coordinated feature integration and code-review workflows across a 25+ person team'
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-sm">
-                      <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
-                      <span className="text-[var(--text-tertiary)]">{item}</span>
+                {/* iPhone with FiPet Screenshot */}
+                <div className="hidden lg:flex items-center justify-center">
+                  <motion.div
+                    whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
+                    onClick={() => setLightboxImage('/project-images/fipet-mobile.png')}
+                    className="relative w-full max-w-xs aspect-[9/19] bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-[2.5rem] shadow-lg cursor-pointer hover:shadow-xl transition-shadow overflow-hidden"
+                  >
+                    {/* Notch */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[var(--bg-primary)] rounded-b-2xl z-10"></div>
+                    
+                    {/* Screen with Screenshot */}
+                    <div className="absolute inset-3 bg-[var(--bg-primary)] rounded-[2rem] overflow-hidden">
+                      <Image
+                        src="/project-images/fipet-mobile.png"
+                        alt="FiPet mobile app showing gamified financial literacy with pet progression and learning quests"
+                        width={375}
+                        height={812}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                  ))}
+                  </motion.div>
                 </div>
+              </div>
+            </motion.div>
 
-                <div className="flex flex-wrap gap-1.5">
-                  {['React Native', 'TypeScript', 'Firebase', 'Firestore'].map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* AI Market Sentiment Dashboard */}
+            {/* Supporting Projects Grid */}
+            <div className="grid md:grid-cols-2 gap-6">{/* AI Market Sentiment Dashboard */}
               <motion.div
                 variants={itemVariants}
                 className="group relative p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--accent-primary)]/30 transition-all duration-300 hover:translate-y-[-2px]"
