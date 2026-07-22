@@ -483,8 +483,8 @@ export default function Portfolio() {
                   </p>
 
                   <div className="mb-6 pb-6 border-b border-[var(--border-subtle)]">
-                    <p className="text-xs font-medium text-[var(--text-primary)] mb-2">What I Built</p>
-                    <p className="text-sm text-[var(--text-tertiary)] leading-relaxed">
+                    <p className="text-sm md:text-xs font-semibold md:font-medium text-[var(--text-primary)] mb-2">What I Built</p>
+                    <p className="text-base md:text-sm text-[var(--text-secondary)] md:text-[var(--text-tertiary)] leading-relaxed" style={{ lineHeight: '1.6' }}>
                       Mobile app and backend: authentication, class-aware matching, real-time messaging, analytics, and moderation.
                     </p>
                   </div>
@@ -504,7 +504,7 @@ export default function Portfolio() {
                     ))}
                   </div>
 
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5 mb-8 lg:mb-0">
                     {['React Native', 'TypeScript', 'Firebase', 'Firestore', 'PostHog'].map((tech) => (
                       <span
                         key={tech}
@@ -516,7 +516,7 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                {/* iPhone with Real Screenshot */}
+                {/* iPhone with Real Screenshot - Desktop */}
                 <div className="hidden lg:flex items-center justify-center">
                   <motion.div
                     whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
@@ -538,6 +538,28 @@ export default function Portfolio() {
                     </div>
                   </motion.div>
                 </div>
+              </div>
+
+              {/* iPhone Mockup - Mobile Only */}
+              <div className="lg:hidden flex justify-center mt-8">
+                <motion.div
+                  onClick={() => setLightboxImage('/project-images/studi-mobile.png')}
+                  className="relative w-[75vw] max-w-[280px] aspect-[9/19] bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-[2.5rem] shadow-lg cursor-pointer active:scale-95 transition-transform overflow-hidden"
+                >
+                  {/* Notch */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-[var(--bg-primary)] rounded-b-2xl z-10"></div>
+                  
+                  {/* Screen with Screenshot */}
+                  <div className="absolute inset-2 bg-[var(--bg-primary)] rounded-[1.8rem] overflow-hidden">
+                    <Image
+                      src="/project-images/studi-mobile.png"
+                      alt="Studi mobile app showing Good evening Kartik, upcoming study sessions, and class schedule"
+                      width={375}
+                      height={812}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
 
@@ -602,7 +624,7 @@ export default function Portfolio() {
                     ))}
                   </div>
 
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5 mb-8 lg:mb-0">
                     {['React Native', 'TypeScript', 'Firebase', 'Firestore'].map((tech) => (
                       <span
                         key={tech}
@@ -614,11 +636,11 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                {/* iPhone with FiPet Screenshot */}
+                {/* iPhone with FiPet Screenshot - Desktop */}
                 <div className="hidden lg:flex items-center justify-center">
                   <motion.div
                     whileHover={shouldReduceMotion ? {} : { scale: 1.02 }}
-                    onClick={() => setLightboxImage('/project-images/fipet-mobile.png')}
+                    onClick={() => setLightboxImage('/project-images/fipet-mobile.webp')}
                     className="relative w-full max-w-xs aspect-[9/19] bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-[2.5rem] shadow-lg cursor-pointer hover:shadow-xl transition-shadow overflow-hidden"
                   >
                     {/* Notch */}
@@ -636,6 +658,28 @@ export default function Portfolio() {
                     </div>
                   </motion.div>
                 </div>
+              </div>
+
+              {/* iPhone Mockup - Mobile Only */}
+              <div className="lg:hidden flex justify-center mt-8">
+                <motion.div
+                  onClick={() => setLightboxImage('/project-images/fipet-mobile.webp')}
+                  className="relative w-[75vw] max-w-[280px] aspect-[9/19] bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] rounded-[2.5rem] shadow-lg cursor-pointer active:scale-95 transition-transform overflow-hidden"
+                >
+                  {/* Notch */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-5 bg-[var(--bg-primary)] rounded-b-2xl z-10"></div>
+                  
+                  {/* Screen with Screenshot */}
+                  <div className="absolute inset-2 bg-[var(--bg-primary)] rounded-[1.8rem] overflow-hidden">
+                    <Image
+                      src="/project-images/fipet-mobile.webp"
+                      alt="FiPet app home screen showing Level 2 orange fox pet, XP progress, daily streak tracker, and financial literacy quests"
+                      width={375}
+                      height={812}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
 
