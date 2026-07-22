@@ -287,7 +287,7 @@ export default function Portfolio() {
               </div>
               
               <a
-                href="/2026GangwarKartikResume.pdf"
+                href="/Kartik_Gangwar_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary text-sm"
@@ -328,7 +328,7 @@ export default function Portfolio() {
                 </button>
               ))}
               <a
-                href="/2026GangwarKartikResume.pdf"
+                href="/Kartik_Gangwar_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-secondary w-full mt-4"
@@ -393,7 +393,7 @@ export default function Portfolio() {
 
               <div className="flex items-center gap-4">
                 <a
-                  href="/2026GangwarKartikResume.pdf"
+                  href="/Kartik_Gangwar_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
@@ -548,7 +548,7 @@ export default function Portfolio() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--accent-primary)]/10 border border-[var(--accent-primary)]/20 rounded-full text-xs font-medium text-[var(--accent-primary)] mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]"></span>
-                Live mobile product · 300+ downloads
+                Live mobile product · 2,000+ downloads
               </div>
 
               <div className="grid lg:grid-cols-[1.2fr,1fr] gap-8">
@@ -816,7 +816,7 @@ export default function Portfolio() {
                     role: 'Lead Software Engineer',
                     time: 'October 2025 – Present',
                     contributions: [
-                      'Leading technical development for gamified financial literacy platform (300+ downloads)',
+                      'Leading technical development for gamified financial literacy platform (2,000+ downloads)',
                       'Reduced authentication sync defects by 35% through improved testing and error handling',
                       'Coordinated feature integration and code reviews across 25+ person engineering team'
                     ],
@@ -938,7 +938,7 @@ export default function Portfolio() {
               </p>
               
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
-                My work includes real-time data sync systems, RESTful API design, Firebase-backed mobile platforms, and ML-driven sentiment analysis. I've shipped features used across a platform with 300+ downloads, reduced data-sync defects by 35% through stronger validation and testing, and built systems supporting real-time interactions.
+                My work includes real-time data sync systems, RESTful API design, Firebase-backed mobile platforms, and ML-driven sentiment analysis. I've shipped features used across a platform with 2,000+ downloads, reduced data-sync defects by 35% through stronger validation and testing, and built systems supporting real-time interactions.
               </p>
 
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed">
@@ -1067,7 +1067,7 @@ export default function Portfolio() {
                 Email Me
               </a>
               <a
-                href="/2026GangwarKartikResume.pdf"
+                href="/Kartik_Gangwar_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)] rounded-md hover:border-[var(--accent-primary)]/30 transition-colors font-medium"
