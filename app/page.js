@@ -530,7 +530,7 @@ export default function Portfolio() {
                     <div className="absolute inset-3 bg-[var(--bg-primary)] rounded-[2rem] overflow-hidden">
                       <Image
                         src="/project-images/studi-mobile.png"
-                        alt="Studi mobile app showing Good evening Kartik, upcoming study sessions, and class schedule"
+                        alt="Studi app home screen showing Hi Kartik, Your next session card for HISTORY 101 Review for 5th quiz, and Your classes list with COMP SCI 400, MATH 320, and HISTORY 101"
                         width={375}
                         height={812}
                         className="w-full h-full object-cover"
@@ -553,7 +553,7 @@ export default function Portfolio() {
                   <div className="absolute inset-2 bg-[var(--bg-primary)] rounded-[1.8rem] overflow-hidden">
                     <Image
                       src="/project-images/studi-mobile.png"
-                      alt="Studi mobile app showing Good evening Kartik, upcoming study sessions, and class schedule"
+                      alt="Studi app home screen showing Hi Kartik, Your next session card for HISTORY 101 Review for 5th quiz, and Your classes list with COMP SCI 400, MATH 320, and HISTORY 101"
                       width={375}
                       height={812}
                       className="w-full h-full object-cover"
