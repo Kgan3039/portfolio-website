@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useReducedMotion, useScroll, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, FileText, Menu, X, ArrowUpRight, ExternalLink } from 'lucide-react'
+import { Github, Linkedin, Menu, X, ArrowUpRight, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Portfolio() {
@@ -285,15 +285,6 @@ export default function Portfolio() {
                   </button>
                 ))}
               </div>
-              
-              <a
-                href="/Kartik_Gangwar_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary text-sm"
-              >
-                Resume
-              </a>
             </div>
 
             <button
@@ -327,14 +318,6 @@ export default function Portfolio() {
                   {link.label}
                 </button>
               ))}
-              <a
-                href="/Kartik_Gangwar_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary w-full mt-4"
-              >
-                Resume
-              </a>
             </div>
           </motion.div>
         )}
@@ -392,15 +375,6 @@ export default function Portfolio() {
               <div className="hidden sm:block w-px h-4 bg-[var(--border-subtle)]"></div>
 
               <div className="flex items-center gap-4">
-                <a
-                  href="/Kartik_Gangwar_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-                >
-                  <FileText size={16} />
-                  <span>Resume</span>
-                </a>
                 <a
                   href="https://github.com/Kgan3039"
                   target="_blank"
@@ -1103,21 +1077,12 @@ export default function Portfolio() {
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <motion.div variants={itemVariants} className="flex items-center justify-center mb-8">
               <a
                 href="mailto:kgangwar@wisc.edu"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--accent-primary)] text-white rounded-md hover:bg-[var(--accent-primary)]/90 transition-colors font-medium"
               >
                 Email Me
-              </a>
-              <a
-                href="/Kartik_Gangwar_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] text-[var(--text-primary)] rounded-md hover:border-[var(--accent-primary)]/30 transition-colors font-medium"
-              >
-                <FileText size={18} />
-                View Resume
               </a>
             </motion.div>
 
