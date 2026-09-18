@@ -366,9 +366,8 @@ export default function Portfolio() {
               >
                 <span className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[var(--accent-primary)] animate-pulse"></span>
-                  <span className="text-sm font-medium text-[var(--text-primary)]">Currently Building</span>
+                  <span className="text-sm font-medium text-[var(--text-primary)]">Recently Shipped — Studi</span>
                 </span>
-                <span className="text-sm text-[var(--accent-primary)] font-medium">Studi</span>
                 <ArrowUpRight size={14} className="text-[var(--accent-primary)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
@@ -425,7 +424,7 @@ export default function Portfolio() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--accent-primary)]/10 border border-[var(--accent-primary)]/20 rounded-full text-xs font-medium text-[var(--accent-primary)] mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent-primary)]"></span>
-                In Active Development
+                Live on the App Store
               </div>
 
               <div className="grid lg:grid-cols-[1.2fr,1fr] gap-8">
@@ -466,10 +465,10 @@ export default function Portfolio() {
                   <div className="space-y-2 mb-6">
                     <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Key Systems</p>
                     {[
-                      'Session discovery with class-based matching',
-                      'Real-time sync via Firestore',
-                      'Rate limiting and privacy controls',
-                      'Funnel instrumentation with PostHog'
+                      'Built real-time coordination backend with Firebase and Firestore',
+                      'Implemented class-based session discovery and enrollment matching',
+                      'Shipped v1.0 with 690+ automated tests, including 270+ emulator security tests',
+                      'Integrated PostHog analytics for funnel tracking and user engagement monitoring'
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-sm">
                         <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
@@ -586,10 +585,10 @@ export default function Portfolio() {
                   <div className="space-y-2 mb-6">
                     <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Engineering Focus</p>
                     {[
-                      'Designed Firestore data models and real-time synchronization workflows',
-                      'Built authentication, gamification, and data-validation services',
-                      'Reduced data-sync defects by 35% through stronger validation and testing',
-                      'Coordinated feature integration and code-review workflows across a 25+ person team'
+                      'Hardened native iOS SwiftUI/Firebase architecture for a production app with 2,000+ downloads',
+                      'Increased test coverage +218% through integration testing focused on authentication and data-sync reliability',
+                      'Worked on native iOS development in Swift and SwiftUI with real-time Firestore synchronization',
+                      'Designed Swift Task lifecycle management for async operations and data fetching'
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-sm">
                         <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
@@ -599,7 +598,7 @@ export default function Portfolio() {
                   </div>
 
                   <div className="flex flex-wrap gap-1.5 mb-8 lg:mb-0">
-                    {['React Native', 'TypeScript', 'Firebase', 'Firestore'].map((tech) => (
+                    {['Swift', 'SwiftUI', 'iOS', 'Firebase', 'Firestore'].map((tech) => (
                       <span
                         key={tech}
                         className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -683,7 +682,7 @@ export default function Portfolio() {
                 </div>
 
                 <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
-                  Real-time AI pipeline: financial headlines → FinBERT sentiment → market data → ML predictions → unified dashboard.
+                  Real-time AI pipeline: Yahoo/RSS ingestion, evidence validation, exact/semantic deduplication, canonical story reconciliation, embedding-based theme clustering with deterministic identities, versioned SQLite persistence (25 tables, 16 indexes, 64 integrity triggers).
                 </p>
 
                 {/* Browser Preview */}
@@ -710,9 +709,9 @@ export default function Portfolio() {
 
                 <div className="space-y-1.5 mb-4">
                   {[
-                    'Backend/frontend API contracts for real-time data',
-                    'Market data pipelines with validation',
-                    'Coordinated 5-member team development'
+                    'Architected versioned SQLite schema with 25 tables, 16 indexes, and 64 integrity triggers for data consistency',
+                    'Built exact/semantic deduplication pipeline with canonical story reconciliation and embedding-based theme clustering',
+                    'Shipped with 3,500+ passing automated tests covering ingestion, validation, storage, and API contracts'
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm">
                       <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
@@ -722,7 +721,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex flex-wrap gap-1.5">
-                  {['FastAPI', 'React', 'Python', 'FinBERT', 'NLP'].map((tech) => (
+                  {['FastAPI', 'React', 'Python', 'SQLite', 'NLP'].map((tech) => (
                     <span
                       key={tech}
                       className="px-2 py-0.5 text-xs bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -758,15 +757,15 @@ export default function Portfolio() {
                 </div>
 
                 <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
-                  Real-time mutual-aid platform: request/offer posting, Firestore matching, live feed sync.
+                  Mutual-aid platform connecting users who post help requests and offers. Firebase Auth handles sign-in, Firestore powers user-scoped match inbox and live feed updates.
                 </p>
 
                 <div className="space-y-1.5 mb-4">
                   {[
-                    'Shipped complete platform in 24 hours',
-                    'Real-time matching and database sync',
-                    'Authentication and live interactions',
-                    'Firestore queries with geolocation filtering'
+                    'Built Firebase Authentication with auth-dependent navigation',
+                    'Designed user-scoped match inbox with live Firestore feeds',
+                    'Prototyped match-acceptance workflow across 4 Firestore collections',
+                    'Implemented timestamped handoff records with missing-reference checks'
                   ].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-sm">
                       <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
@@ -822,24 +821,25 @@ export default function Portfolio() {
                     role: 'Software Engineering Project Manager',
                     time: 'March 2026 – Present',
                     contributions: [
-                      'Coordinated 20+ club members to demo full-stack AI market sentiment dashboard using FinBERT, FastAPI, and React',
-                      'Built backend REST APIs for financial data pipelines with validation and testing infrastructure',
-                      'Reduced ML service latency through debugging and optimization of Python prediction endpoints'
+                      'Lead 5-person team integrating AI market sentiment dashboard components with typed API contracts and validation boundaries',
+                      'Implemented REST APIs and a 15-minute provider cache with stale-data fallback, reducing 10 repeated requests to 1 external provider call in controlled testing',
+                      'Coordinated provider fallbacks and caching strategies across backend services'
                     ],
-                    impact: 'Built an end-to-end AI market sentiment platform with real-time sentiment analysis',
-                    tech: ['FastAPI', 'React', 'Python', 'FinBERT']
+                    impact: 'Integrated AI market sentiment platform with typed contracts and validation',
+                    tech: ['FastAPI', 'React', 'Python', 'SQLite']
                   },
                   {
                     company: 'FiPet',
-                    role: 'Lead Software Engineer',
+                    role: 'Lead Software Engineer (CTO)',
                     time: 'October 2025 – Present',
                     contributions: [
-                      'Leading technical development for gamified financial literacy platform (2,000+ downloads)',
-                      'Reduced authentication sync defects by 35% through improved testing and error handling',
-                      'Coordinated feature integration and code reviews across 25+ person engineering team'
+                      'Worked on native iOS development in Swift and SwiftUI for gamified financial-literacy app (2,000+ downloads)',
+                      'Increased test coverage +218% through integration testing focused on authentication and data-sync reliability',
+                      'Designed Swift Task lifecycle management for async operations and real-time Firestore synchronization',
+                      'Hardened native iOS SwiftUI/Firebase architecture for production app stability'
                     ],
-                    impact: 'Built scalable Firebase backend with real-time gamification systems',
-                    tech: ['React Native', 'TypeScript', 'Firebase', 'Firestore']
+                    impact: 'Built reliable iOS app with scalable Firebase backend and rigorous testing practices',
+                    tech: ['Swift', 'SwiftUI', 'iOS', 'Firebase', 'Firestore']
                   },
                   {
                     company: 'iStart Valley',
@@ -952,15 +952,15 @@ export default function Portfolio() {
 
             <motion.div variants={itemVariants} className="max-w-3xl">
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
-                I'm a Computer Science and Data Science student at UW–Madison who builds scalable backend systems, mobile applications, and machine learning pipelines. I take products from concept to deployment, focusing on scalable architecture and reliable software.
+                I'm a Computer Science and Data Science student at UW–Madison focused on building reliable software systems. I work on backend development, iOS mobile apps, data pipelines, and machine-learning infrastructure — taking projects from design through deployment.
               </p>
               
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
-                My work includes real-time data sync systems, RESTful API design, Firebase-backed mobile platforms, and ML-driven sentiment analysis. I've shipped features used across a platform with 2,000+ downloads, reduced data-sync defects by 35% through stronger validation and testing, and built systems supporting real-time interactions.
+                Currently shipping FiPet (2,000+ downloads on iOS), built in Swift and SwiftUI with Firebase backend. Recently launched Studi v1.0 — a study-coordination platform for UW–Madison with real-time session matching and 690+ automated tests, including 270+ emulator security tests. Also leading a 5-person team at AI@UW integrating an AI-powered market sentiment dashboard with typed API contracts, validation boundaries, and a 15-minute provider cache.
               </p>
 
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed">
-                Currently engineering Studi — a class-based study coordination platform for UW–Madison that matches students with sessions through enrollment data and preference algorithms.
+                My technical focus: scalable backend systems, iOS development (Swift/SwiftUI), real-time data sync (Firebase/Firestore), RESTful API design, and test-driven development. I prioritize reliability, comprehensive testing, and shipping software that users depend on.
               </p>
             </motion.div>
           </motion.div>
@@ -992,7 +992,7 @@ export default function Portfolio() {
                   Languages
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Python', 'Java', 'JavaScript', 'TypeScript', 'SQL'].map((skill) => (
+                  {['Python', 'Swift', 'Java', 'JavaScript', 'TypeScript', 'SQL'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -1006,10 +1006,10 @@ export default function Portfolio() {
               {/* Frameworks & Technologies */}
               <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
                 <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
-                  Frameworks & Technologies
+                  Frameworks & Platforms
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['React', 'React Native', 'FastAPI', 'Firebase', 'Firestore', 'Node.js'].map((skill) => (
+                  {['React', 'React Native', 'SwiftUI', 'FastAPI', 'Node.js', 'Firebase', 'Firestore', 'SQLite', 'REST APIs'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -1020,13 +1020,13 @@ export default function Portfolio() {
                 </div>
               </motion.div>
 
-              {/* Backend & Tools */}
+              {/* Developer Tools */}
               <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg">
                 <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
-                  Backend & Tools
+                  Developer Tools
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Git', 'GitHub', 'Linux', 'VS Code', 'Jupyter Notebook'].map((skill) => (
+                  {['Linux', 'Git', 'GitHub', 'GitHub Actions', 'Docker', 'Claude Code', 'Codex'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -1037,13 +1037,13 @@ export default function Portfolio() {
                 </div>
               </motion.div>
 
-              {/* ML / AI */}
+              {/* AI/ML & Data */}
               <motion.div variants={itemVariants} className="p-6 bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg md:col-span-2 lg:col-span-3">
                 <h3 className="text-sm uppercase tracking-wide text-[var(--text-primary)] font-medium mb-4">
-                  ML / AI
+                  AI/ML & Data
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['TensorFlow', 'PyTorch', 'scikit-learn', 'NumPy', 'Pandas', 'FinBERT'].map((skill) => (
+                  {['PyTorch', 'Hugging Face Transformers', 'sentence-transformers', 'HDBSCAN', 'scikit-learn', 'NumPy', 'Pandas'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
