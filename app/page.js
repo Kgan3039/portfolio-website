@@ -439,34 +439,46 @@ export default function Portfolio() {
                         Study coordination for UW–Madison students
                       </p>
                     </div>
-                    <a
-                      href="https://joinstudi.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Visit Studi website"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[var(--accent-primary)] hover:text-[var(--accent-hover)] bg-[var(--accent-primary)]/10 hover:bg-[var(--accent-primary)]/20 border border-[var(--accent-primary)]/20 rounded-md transition-all duration-200"
-                    >
-                      <span>Visit Website</span>
-                      <ExternalLink size={12} />
-                    </a>
+                    <div className="flex gap-2">
+                      <a
+                        href="https://joinstudi.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Studi website"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[var(--accent-primary)] hover:text-[var(--accent-hover)] bg-[var(--accent-primary)]/10 hover:bg-[var(--accent-primary)]/20 border border-[var(--accent-primary)]/20 rounded-md transition-all duration-200"
+                      >
+                        <span>Visit Website</span>
+                        <ExternalLink size={12} />
+                      </a>
+                      <a
+                        href="STUDI_APP_STORE_URL_PLACEHOLDER"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Download Studi on the App Store"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[var(--accent-primary)] hover:text-[var(--accent-hover)] bg-[var(--accent-primary)]/10 hover:bg-[var(--accent-primary)]/20 border border-[var(--accent-primary)]/20 rounded-md transition-all duration-200"
+                      >
+                        <span>App Store</span>
+                        <ExternalLink size={12} />
+                      </a>
+                    </div>
                   </div>
                   
                   <p className="text-[var(--text-tertiary)] text-sm mb-6 leading-relaxed">
-                    Connects students with study sessions based on class enrollment and preferences. Solving session discovery and peer coordination at scale.
+                    Helps UW–Madison students discover study sessions, coordinate with classmates, and connect through real-time messaging.
                   </p>
 
                   <div className="mb-6 pb-6 border-b border-[var(--border-subtle)]">
                     <p className="text-sm md:text-xs font-semibold md:font-medium text-[var(--text-primary)] mb-2">What I Built</p>
                     <p className="text-base md:text-sm text-[var(--text-secondary)] md:text-[var(--text-tertiary)] leading-relaxed" style={{ lineHeight: '1.6' }}>
-                      Mobile app and backend: authentication, class-aware matching, real-time messaging, analytics, and moderation.
+                      Production mobile app and backend spanning authentication, study sessions, friend discovery, real-time messaging, push notifications, analytics, and moderation.
                     </p>
                   </div>
 
                   <div className="space-y-2 mb-6">
                     <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Key Systems</p>
                     {[
-                      'Built real-time coordination backend with Firebase and Firestore',
-                      'Implemented class-based session discovery and enrollment matching',
+                      'Built real-time coordination workflows with Firebase and Firestore',
+                      'Built class-aware study-session discovery and friend discovery workflows',
                       'Shipped v1.0 with 690+ automated tests, including 270+ emulator security tests',
                       'Integrated PostHog analytics for funnel tracking and user engagement monitoring'
                     ].map((item, idx) => (
@@ -586,9 +598,9 @@ export default function Portfolio() {
                     <p className="text-xs uppercase tracking-wide text-[var(--text-tertiary)] font-medium">Engineering Focus</p>
                     {[
                       'Hardened native iOS SwiftUI/Firebase architecture for a production app with 2,000+ downloads',
-                      'Increased test coverage +218% through integration testing focused on authentication and data-sync reliability',
-                      'Worked on native iOS development in Swift and SwiftUI with real-time Firestore synchronization',
-                      'Designed Swift Task lifecycle management for async operations and data fetching'
+                      'Expanded native iOS regression coverage from 164 to 521 tests (+218%) across authentication, Firebase contracts, onboarding recovery, and asynchronous state handling',
+                      'Diagnosed and fixed Swift Task/AsyncStream lifecycle bugs retaining battle view models and Firestore listeners',
+                      'Added environment safeguards across 4 native build configurations spanning authentication, account deletion, social features, and real-time battles'
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-start gap-2 text-sm">
                         <span className="text-[var(--accent-primary)] mt-0.5 text-xs">→</span>
@@ -821,11 +833,11 @@ export default function Portfolio() {
                     role: 'Software Engineering Project Manager',
                     time: 'March 2026 – Present',
                     contributions: [
-                      'Lead 5-person team integrating AI market sentiment dashboard components with typed API contracts and validation boundaries',
-                      'Implemented REST APIs and a 15-minute provider cache with stale-data fallback, reducing 10 repeated requests to 1 external provider call in controlled testing',
-                      'Coordinated provider fallbacks and caching strategies across backend services'
+                      'Lead a 5-person engineering team building a financial-news intelligence platform across ingestion, NLP, prediction, backend, and frontend systems',
+                      'Integrated independently developed Python/FastAPI, NLP, prediction, and React components into an end-to-end system with typed API contracts, validation boundaries, provider fallbacks, and deterministic data workflows',
+                      'Implemented REST APIs and a 15-minute provider cache with stale-data fallback, reducing 10 repeated requests to 1 external provider call in controlled testing'
                     ],
-                    impact: 'Integrated AI market sentiment platform with typed contracts and validation',
+                    impact: 'Led architecture and integration across a 5-person engineering team building a financial-news intelligence platform',
                     tech: ['FastAPI', 'React', 'Python', 'SQLite']
                   },
                   {
@@ -846,11 +858,11 @@ export default function Portfolio() {
                     role: 'Technology Strategy Intern',
                     time: 'June 2023 – September 2023',
                     contributions: [
-                      'Developed technical prototypes for VR-based mental health platform',
-                      'Designed headset interaction workflows and immersive environments',
-                      'Applied lean startup principles and product-market fit analysis'
+                      'Analyzed the technical and market feasibility of a VR mental-health product, including potential AI/ML approaches',
+                      'Translated technical findings into product and business recommendations',
+                      'Presented recommendations in iStart Valley global business competition, advancing to the Global Semifinals'
                     ],
-                    impact: 'Evaluated AI-driven product concepts and UX systems',
+                    impact: 'Global Semifinalist — iStart Valley Business Pitch Competition',
                     tech: ['VR', 'AI Solutions', 'Product Strategy']
                   },
                   {
@@ -858,11 +870,11 @@ export default function Portfolio() {
                     role: 'Software Engineering Instructor',
                     time: 'June 2023 – August 2025',
                     contributions: [
-                      'Taught Python, JavaScript, and robotics to 40+ students',
-                      'Designed technical lesson plans and engineering exercises',
-                      'Built autonomous robotics challenges with sensor integration'
+                      'Designed and taught project-based Python and JavaScript curriculum for 40+ students',
+                      'Achieved a 90% project completion rate across student programming projects',
+                      'Mentored students through software and robotics projects, debugging, and problem-solving'
                     ],
-                    impact: 'Developed software fundamentals curriculum',
+                    impact: 'Taught software development to 40+ students with a 90% project completion rate',
                     tech: ['Python', 'JavaScript', 'Robotics']
                   }
                 ].map((exp, idx) => (
@@ -952,15 +964,15 @@ export default function Portfolio() {
 
             <motion.div variants={itemVariants} className="max-w-3xl">
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
-                I'm a Computer Science and Data Science student at UW–Madison focused on building reliable software systems. I work on backend development, iOS mobile apps, data pipelines, and machine-learning infrastructure — taking projects from design through deployment.
+                I'm a Computer Science and Data Science student at UW–Madison focused on building reliable software systems. I work across backend development, native iOS, data pipelines, and machine-learning infrastructure, with a particular interest in what happens after a prototype works: architecture, testing, security, integration, and production reliability.
               </p>
               
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed mb-6">
-                Currently shipping FiPet (2,000+ downloads on iOS), built in Swift and SwiftUI with Firebase backend. Recently launched Studi v1.0 — a study-coordination platform for UW–Madison with real-time session matching and 690+ automated tests, including 270+ emulator security tests. Also leading a 5-person team at AI@UW integrating an AI-powered market sentiment dashboard with typed API contracts, validation boundaries, and a 15-minute provider cache.
+                My recent work includes native iOS engineering for FiPet, a production app with 2,000+ downloads; shipping Studi v1.0 to the App Store with 690+ automated tests; and leading a five-person AI@UW engineering team building a financial-news intelligence platform.
               </p>
 
               <p className="text-[var(--text-tertiary)] text-base leading-relaxed">
-                My technical focus: scalable backend systems, iOS development (Swift/SwiftUI), real-time data sync (Firebase/Firestore), RESTful API design, and test-driven development. I prioritize reliability, comprehensive testing, and shipping software that users depend on.
+                I enjoy working on systems where reliability matters — from debugging Swift concurrency and real-time Firebase state to designing durable data pipelines and backend APIs.
               </p>
             </motion.div>
           </motion.div>
