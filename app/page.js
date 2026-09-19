@@ -451,7 +451,7 @@ export default function Portfolio() {
                         <ExternalLink size={12} />
                       </a>
                       <a
-                        href="STUDI_APP_STORE_URL_PLACEHOLDER"
+                        href="https://apps.apple.com/us/app/studi-study-together/id6804290285"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Download Studi on the App Store"
@@ -845,12 +845,11 @@ export default function Portfolio() {
                     role: 'Lead Software Engineer (CTO)',
                     time: 'October 2025 – Present',
                     contributions: [
-                      'Worked on native iOS development in Swift and SwiftUI for gamified financial-literacy app (2,000+ downloads)',
-                      'Increased test coverage +218% through integration testing focused on authentication and data-sync reliability',
-                      'Designed Swift Task lifecycle management for async operations and real-time Firestore synchronization',
-                      'Hardened native iOS SwiftUI/Firebase architecture for production app stability'
+                      'Expanded native iOS regression coverage from 164 to 521 tests (+218%), validating Firebase contracts, authentication flows, onboarding recovery, account integrity, and asynchronous state handling',
+                      'Diagnosed and fixed Swift Task/AsyncStream lifecycle bugs that retained battle view models and Firestore listeners, introducing explicit task ownership and cancellation',
+                      'Hardened SwiftUI/Firebase architecture for a production iOS app with 2,000+ downloads, adding environment safeguards across 4 native build configurations spanning authentication, account deletion, social features, and real-time battles'
                     ],
-                    impact: 'Built reliable iOS app with scalable Firebase backend and rigorous testing practices',
+                    impact: 'Improved native iOS reliability for a production app with 2,000+ downloads through regression testing, concurrency debugging, and environment safeguards',
                     tech: ['Swift', 'SwiftUI', 'iOS', 'Firebase', 'Firestore']
                   },
                   {
@@ -1004,7 +1003,7 @@ export default function Portfolio() {
                   Languages
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Python', 'Swift', 'Java', 'JavaScript', 'TypeScript', 'SQL'].map((skill) => (
+                  {['Python', 'Java', 'C/C++', 'Swift', 'JavaScript', 'TypeScript', 'SQL'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
@@ -1038,7 +1037,7 @@ export default function Portfolio() {
                   Developer Tools
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {['Linux', 'Git', 'GitHub', 'GitHub Actions', 'Docker', 'Claude Code', 'Codex'].map((skill) => (
+                  {['Linux', 'Git', 'GitHub', 'GitHub Actions', 'Docker', 'AWS', 'Azure', 'Claude Code', 'Codex'].map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1.5 text-sm bg-[var(--bg-tertiary)] text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded"
